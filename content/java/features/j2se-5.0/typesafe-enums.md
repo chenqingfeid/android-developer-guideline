@@ -1,2 +1,0 @@
-# Typesafe Enums
-

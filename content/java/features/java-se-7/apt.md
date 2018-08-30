@@ -1,2 +1,0 @@
-# Annotation Processing Tool (apt)
-

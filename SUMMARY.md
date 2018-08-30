@@ -4,57 +4,13 @@
 
 ## Java
 * Features
-    * Java SE 10
-  *
-    * Java SE 9
-        * [Module System](content/java/features/java-se-9/module-system.md)
-        * [Version-String Scheme](content/java/features/java-se-9/version-string-scheme.md)
-    * Java SE 8
-        * [Lambda Expressions](content/java/features/java-se-8/lambda-expressions.md)
-        * [Method References](content/java/features/java-se-8/method-references.md)
-        * [Default Methods](content/java/features/java-se-8/default-methods.md)
-        * [Pipelines and Streams](content/java/features/java-se-8/pipelines-and-streams.md)
-        * [Type Annotations](content/java/features/java-se-8/type-annotations.md)
-        * [Type Inference](content/java/features/java-se-8/type-inference.md)
-        * [Method Parameter Reflection](content/java/features/java-se-8/method-parameter-reflection.md)
-        * [Nashorn JavaScript Engine](content/java/features/java-se-8/nashorn-javascript-engine.md)
-        * [Concurrent Accumulators](content/java/features/java-se-8/concurrent-accumulators.md)
-        * [Parallel operations](content/java/features/java-se-8/parallel-operations.md)
-        * [Date and Time API](content/java/features/java-se-8/date-and-time-api.md)
-        * [PermGen Error Removed](content/java/features/java-se-8/permgen-error-removed.md)
-        * [TLS SNI](content/java/features/java-se-8/tls-sni.md)
-    * Java SE 7 - Dolphin
-        * [String in switch Statement](content/java/features/java-se-7/string-in-switch-statement.md)
-        * [Type Inference for Generic Instance Creation](content/java/features/java-se-7/type-inference-for-generic-creation.md)
-        * [Multiple Exception Handling](content/java/features/java-se-7/multiple-exception-handling.md)
-        * [Support for Dynamic Language](content/java/features/java-se-7/support-for-dynamic-language.md)
-        * [Try with Resources](content/java/features/java-se-7/try-with-resources.md)
-        * [Java nio Package](content/java/features/java-se-7/java-nio-package.md)
-        * [Binary Literals,](content/java/features/java-se-7/binary-literals.md)
-        * [Underscore in Number Literals](content/java/features/java-se-7/underscore-in-number-literals.md)
-        * [Diamond Syntax](content/java/features/java-se-7/diamond-syntax.md)
-        * [Automatic null Handling](content/java/features/java-se-7/automatic-null-handling.md)
-        * [Improved Compiler Warnings and Errors](content/java/features/java-se-7/improved-compiler-warnings-and-errors.md)
-        * [Annotation Processing Tool (apt)](content/java/features/java-se-7/apt.md)
-    * Java SE 6 - Mustang
-        * [Script Language Support](content/java/features/java-se-6/script-language-support.md)
-        * [JDBC 4.0 API](content/java/features/java-se-6/jdbc-4.0-api.md)
-        * [Java Compiler API](content/java/features/java-se-6/java-compiler-api.md)
-        * [Pluggable Annotations](content/java/features/java-se-6/pluggable-annotations.md)
-        * [Native PKI, Java GSS, Kerberos and LDAP support](content/java/features/java-se-6/native-pki-java-gss-kerberos-and-ldap-support.md)
-        * [Integrated Web Services](content/java/features/java-se-6/integrated-web-services.md)
-        * [Instrumentation (agentmain)](content/java/features/java-se-6/instrumentation.md)
-    * J2SE 5.0 - Tiger
-        * [Generic](content/java/features/j2se-5.0/generic.md)
-        * [Enhanced for Loop](content/java/features/j2se-5.0/enhanced-for-loop.md)
-        * [Autoboxing/Unboxing](content/java/features/j2se-5.0/autoboxing-unboxing.md)
-        * [Typesafe Enums](content/java/features/j2se-5.0/typesafe-enums.md)
-        * [Varargs](content/java/features/j2se-5.0/varargs.md)
-        * [Static Import](content/java/features/j2se-5.0/static-import.md)
-        * [Annotation](content/java/features/j2se-5.0/annotation.md)
-        * [Instrumentation](content/java/features/j2se-5.0/instrumentation.md)
-    * J2SE 1.4 - Merlin
-        * [Assertion Facility](content/java/features/j2se-1.4/assertion-facility.md)
+    * [Java SE 10](content/java/features/java-se-10/README.md)
+    * [Java SE 9](content/java/features/java-se-9/README.md)
+    * [Java SE 8](content/java/features/java-se-8/README.md)
+    * [Java SE 7](content/java/features/java-se-7/README.md)
+    * [Java SE 6](content/java/features/java-se-6/README.md)
+    * [J2SE 5.0](content/java/features/j2se-5.0/README.md)
+    * [J2SE 1.4](content/java/features/j2se-1.4/README.md)
 * [Java Virtual Machine](content/java/jvm/README.md)
 * [Java Native Interface](content/java/jni/README.md)
 
