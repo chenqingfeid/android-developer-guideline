@@ -1,0 +1,3188 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Lambda Expressions · Android开发者指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pipelines-and-streams.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Preface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                        <b>2.1.</b>
+                    
+                    Features
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" >
+            
+                <span>
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    Java SE 8
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1.1" data-path="lambda-expressions.html">
+            
+                <a href="lambda-expressions.html">
+            
+                    
+                        <b>2.1.1.1.</b>
+                    
+                    Lambda Expressions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.2" data-path="pipelines-and-streams.html">
+            
+                <a href="pipelines-and-streams.html">
+            
+                    
+                        <b>2.1.1.2.</b>
+                    
+                    Pipelines and Streams
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.3" data-path="date-and-time-api.html">
+            
+                <a href="date-and-time-api.html">
+            
+                    
+                        <b>2.1.1.3.</b>
+                    
+                    Date and Time API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.4" data-path="default-methods.html">
+            
+                <a href="default-methods.html">
+            
+                    
+                        <b>2.1.1.4.</b>
+                    
+                    Default Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.5" data-path="type-annotations.html">
+            
+                <a href="type-annotations.html">
+            
+                    
+                        <b>2.1.1.5.</b>
+                    
+                    Type Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.6" data-path="type-inference.html">
+            
+                <a href="type-inference.html">
+            
+                    
+                        <b>2.1.1.6.</b>
+                    
+                    Type Inference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.7" data-path="method-parameter-reflection.html">
+            
+                <a href="method-parameter-reflection.html">
+            
+                    
+                        <b>2.1.1.7.</b>
+                    
+                    Method Parameter Reflection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.8" data-path="nashorn-javascript-engine.html">
+            
+                <a href="nashorn-javascript-engine.html">
+            
+                    
+                        <b>2.1.1.8.</b>
+                    
+                    Nashorn JavaScript Engine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.9" data-path="concurrent-accumulators.html">
+            
+                <a href="concurrent-accumulators.html">
+            
+                    
+                        <b>2.1.1.9.</b>
+                    
+                    Concurrent Accumulators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.10" data-path="parallel-operations.html">
+            
+                <a href="parallel-operations.html">
+            
+                    
+                        <b>2.1.1.10.</b>
+                    
+                    Parallel operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.11" data-path="permgen-error-removed.html">
+            
+                <a href="permgen-error-removed.html">
+            
+                    
+                        <b>2.1.1.11.</b>
+                    
+                    PermGen Error Removed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.1.12" data-path="tls-sni.html">
+            
+                <a href="tls-sni.html">
+            
+                    
+                        <b>2.1.1.12.</b>
+                    
+                    TLS SNI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" >
+            
+                <span>
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    Java SE 7 - Dolphin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../java-se-7/string-in-switch-statement.html">
+            
+                <a href="../java-se-7/string-in-switch-statement.html">
+            
+                    
+                        <b>2.1.2.1.</b>
+                    
+                    String in switch Statement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.2" data-path="../java-se-7/type-inference-for-generic-creation.html">
+            
+                <a href="../java-se-7/type-inference-for-generic-creation.html">
+            
+                    
+                        <b>2.1.2.2.</b>
+                    
+                    Type Inference for Generic Instance Creation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.3" data-path="../java-se-7/multiple-exception-handling.html">
+            
+                <a href="../java-se-7/multiple-exception-handling.html">
+            
+                    
+                        <b>2.1.2.3.</b>
+                    
+                    Multiple Exception Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.4" data-path="../java-se-7/support-for-dynamic-language.html">
+            
+                <a href="../java-se-7/support-for-dynamic-language.html">
+            
+                    
+                        <b>2.1.2.4.</b>
+                    
+                    Support for Dynamic Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.5" data-path="../java-se-7/try-with-resources.html">
+            
+                <a href="../java-se-7/try-with-resources.html">
+            
+                    
+                        <b>2.1.2.5.</b>
+                    
+                    Try with Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.6" data-path="../java-se-7/java-nio-package.html">
+            
+                <a href="../java-se-7/java-nio-package.html">
+            
+                    
+                        <b>2.1.2.6.</b>
+                    
+                    Java nio Package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.7" data-path="../java-se-7/binary-literals.html">
+            
+                <a href="../java-se-7/binary-literals.html">
+            
+                    
+                        <b>2.1.2.7.</b>
+                    
+                    Binary Literals,
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.8" data-path="../java-se-7/underscore-in-number-literals.html">
+            
+                <a href="../java-se-7/underscore-in-number-literals.html">
+            
+                    
+                        <b>2.1.2.8.</b>
+                    
+                    Underscore in Number Literals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.9" data-path="../java-se-7/diamond-syntax.html">
+            
+                <a href="../java-se-7/diamond-syntax.html">
+            
+                    
+                        <b>2.1.2.9.</b>
+                    
+                    Diamond Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.10" data-path="../java-se-7/automatic-null-handling.html">
+            
+                <a href="../java-se-7/automatic-null-handling.html">
+            
+                    
+                        <b>2.1.2.10.</b>
+                    
+                    Automatic null Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.11" data-path="../java-se-7/improved-compiler-warnings-and-errors.html">
+            
+                <a href="../java-se-7/improved-compiler-warnings-and-errors.html">
+            
+                    
+                        <b>2.1.2.11.</b>
+                    
+                    Improved Compiler Warnings and Errors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2.12" data-path="../java-se-7/apt.html">
+            
+                <a href="../java-se-7/apt.html">
+            
+                    
+                        <b>2.1.2.12.</b>
+                    
+                    Annotation Processing Tool (apt)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" >
+            
+                <span>
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    Java SE 6 - Mustang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.3.1" data-path="../java-se-6/script-language-support.html">
+            
+                <a href="../java-se-6/script-language-support.html">
+            
+                    
+                        <b>2.1.3.1.</b>
+                    
+                    Script Language Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.2" data-path="../java-se-6/jdbc-4.0-api.html">
+            
+                <a href="../java-se-6/jdbc-4.0-api.html">
+            
+                    
+                        <b>2.1.3.2.</b>
+                    
+                    JDBC 4.0 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.3" data-path="../java-se-6/java-compiler-api.html">
+            
+                <a href="../java-se-6/java-compiler-api.html">
+            
+                    
+                        <b>2.1.3.3.</b>
+                    
+                    Java Compiler API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.4" data-path="../java-se-6/pluggable-annotations.html">
+            
+                <a href="../java-se-6/pluggable-annotations.html">
+            
+                    
+                        <b>2.1.3.4.</b>
+                    
+                    Pluggable Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.5" data-path="../java-se-6/native-pki-java-gss-kerberos-and-ldap-support.html">
+            
+                <a href="../java-se-6/native-pki-java-gss-kerberos-and-ldap-support.html">
+            
+                    
+                        <b>2.1.3.5.</b>
+                    
+                    Native PKI, Java GSS, Kerberos and LDAP support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.6" data-path="../java-se-6/integrated-web-services.html">
+            
+                <a href="../java-se-6/integrated-web-services.html">
+            
+                    
+                        <b>2.1.3.6.</b>
+                    
+                    Integrated Web Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3.7" data-path="../java-se-6/instrumentation.html">
+            
+                <a href="../java-se-6/instrumentation.html">
+            
+                    
+                        <b>2.1.3.7.</b>
+                    
+                    Instrumentation (agentmain)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" >
+            
+                <span>
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    J2SE 5.0 - Tiger
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.4.1" data-path="../j2se-5.0/generic.html">
+            
+                <a href="../j2se-5.0/generic.html">
+            
+                    
+                        <b>2.1.4.1.</b>
+                    
+                    Generic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.2" data-path="../j2se-5.0/enhanced-for-loop.html">
+            
+                <a href="../j2se-5.0/enhanced-for-loop.html">
+            
+                    
+                        <b>2.1.4.2.</b>
+                    
+                    Enhanced For Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.3" data-path="../j2se-5.0/autoboxing-unboxing.html">
+            
+                <a href="../j2se-5.0/autoboxing-unboxing.html">
+            
+                    
+                        <b>2.1.4.3.</b>
+                    
+                    Autoboxing/Unboxing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.4" data-path="../j2se-5.0/typesafe-enums.html">
+            
+                <a href="../j2se-5.0/typesafe-enums.html">
+            
+                    
+                        <b>2.1.4.4.</b>
+                    
+                    Typesafe Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.5" data-path="../j2se-5.0/varargs.html">
+            
+                <a href="../j2se-5.0/varargs.html">
+            
+                    
+                        <b>2.1.4.5.</b>
+                    
+                    Varargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.6" data-path="../j2se-5.0/static-import.html">
+            
+                <a href="../j2se-5.0/static-import.html">
+            
+                    
+                        <b>2.1.4.6.</b>
+                    
+                    Static Import
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.7" data-path="../j2se-5.0/annotation.html">
+            
+                <a href="../j2se-5.0/annotation.html">
+            
+                    
+                        <b>2.1.4.7.</b>
+                    
+                    Annotation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.8" data-path="../j2se-5.0/instrumentation.html">
+            
+                <a href="../j2se-5.0/instrumentation.html">
+            
+                    
+                        <b>2.1.4.8.</b>
+                    
+                    Instrumentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                        <b>2.2.</b>
+                    
+                    Java Virtual Machine
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                        <b>2.3.</b>
+                    
+                    Java Native Interface
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kotlin</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.</b>
+                    
+                    Features
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.</b>
+                    
+                    Kotlin 1.2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" data-path="../../../kotlin/features/1.2/multiplatform-projects.html">
+            
+                <a href="../../../kotlin/features/1.2/multiplatform-projects.html">
+            
+                    
+                        <b>3.1.1.1.</b>
+                    
+                    Multiplatform Projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" data-path="../../../kotlin/features/1.2/array-literals-in-annotations.html">
+            
+                <a href="../../../kotlin/features/1.2/array-literals-in-annotations.html">
+            
+                    
+                        <b>3.1.1.2.</b>
+                    
+                    Array Literals in Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.3" data-path="../../../kotlin/features/1.2/lateinit-top-level-properties-and-local-variables.html">
+            
+                <a href="../../../kotlin/features/1.2/lateinit-top-level-properties-and-local-variables.html">
+            
+                    
+                        <b>3.1.1.3.</b>
+                    
+                    Lateinit Top-Level Properties and Local Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.4" data-path="../../../kotlin/features/1.2/checking-whether-a-lateinit-var-is-initialized.html">
+            
+                <a href="../../../kotlin/features/1.2/checking-whether-a-lateinit-var-is-initialized.html">
+            
+                    
+                        <b>3.1.1.4.</b>
+                    
+                    Checking Whether a Lateinit Var is Initialized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.5" data-path="../../../kotlin/features/1.2/inline-functions-with-default-functional-parameters.html">
+            
+                <a href="../../../kotlin/features/1.2/inline-functions-with-default-functional-parameters.html">
+            
+                    
+                        <b>3.1.1.5.</b>
+                    
+                    Inline Functions with Default Functional Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.6" data-path="../../../kotlin/features/1.2/information-from-explicit-casts-is-used-for-type-inference.html">
+            
+                <a href="../../../kotlin/features/1.2/information-from-explicit-casts-is-used-for-type-inference.html">
+            
+                    
+                        <b>3.1.1.6.</b>
+                    
+                    Information From Explicit Casts is Used for Type Inference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.7" data-path="../../../kotlin/features/1.2/smart-cast-improvements.html">
+            
+                <a href="../../../kotlin/features/1.2/smart-cast-improvements.html">
+            
+                    
+                        <b>3.1.1.7.</b>
+                    
+                    Smart cast improvements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.8" data-path="../../../kotlin/features/1.2/shorthand-for-callable-references.html">
+            
+                <a href="../../../kotlin/features/1.2/shorthand-for-callable-references.html">
+            
+                    
+                        <b>3.1.1.8.</b>
+                    
+                    Shorthand for Callbale References
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.9" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.9.</b>
+                    
+                    Breaking Change
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.9.1" data-path="../../../kotlin/features/1.2/breaking-change/sound-smart-casts-after-try-blocks.html">
+            
+                <a href="../../../kotlin/features/1.2/breaking-change/sound-smart-casts-after-try-blocks.html">
+            
+                    
+                        <b>3.1.1.9.1.</b>
+                    
+                    Sound Smart Casts After Try Blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.10" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.10.</b>
+                    
+                    Deprecation
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.10.1" data-path="../../../kotlin/features/1.2/deprecation/data-class-overriding-copy.html">
+            
+                <a href="../../../kotlin/features/1.2/deprecation/data-class-overriding-copy.html">
+            
+                    
+                        <b>3.1.1.10.1.</b>
+                    
+                    Data Classes Overriding Copy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.10.2" data-path="../../../kotlin/features/1.2/deprecation/nested-types-in-enum-entries.html">
+            
+                <a href="../../../kotlin/features/1.2/deprecation/nested-types-in-enum-entries.html">
+            
+                    
+                        <b>3.1.1.10.2.</b>
+                    
+                    Nested Types in Enum Entries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.10.3" data-path="../../../kotlin/features/1.2/deprecation/single-named-argument-for-vararg.html">
+            
+                <a href="../../../kotlin/features/1.2/deprecation/single-named-argument-for-vararg.html">
+            
+                    
+                        <b>3.1.1.10.3.</b>
+                    
+                    Single Named Argument for Vararg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.10.4" data-path="../../../kotlin/features/1.2/deprecation/inner-classes-of-generic-classes-extending-throwable.html">
+            
+                <a href="../../../kotlin/features/1.2/deprecation/inner-classes-of-generic-classes-extending-throwable.html">
+            
+                    
+                        <b>3.1.1.10.4.</b>
+                    
+                    Inner Classes of Generic Classes Extending Throwable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.10.5" data-path="../../../kotlin/features/1.2/deprecation/mutating-backing-field-of-a-read-only-property.html">
+            
+                <a href="../../../kotlin/features/1.2/deprecation/mutating-backing-field-of-a-read-only-property.html">
+            
+                    
+                        <b>3.1.1.10.5.</b>
+                    
+                    Mutating Backing Field of A Read-Only Property
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.11.</b>
+                    
+                    Standard Library
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.11.1" data-path="../../../kotlin/features/1.2/stdlib/windowed-chunked-zipwithnext.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/windowed-chunked-zipwithnext.html">
+            
+                    
+                        <b>3.1.1.11.1.</b>
+                    
+                    windowed, chunked, zipWithNext
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11.2" data-path="../../../kotlin/features/1.2/stdlib/fill-replaceall-shuffle-shuffled.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/fill-replaceall-shuffle-shuffled.html">
+            
+                    
+                        <b>3.1.1.11.2.</b>
+                    
+                    fill, replaceAll, shuffle/shuffled
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11.3" data-path="../../../kotlin/features/1.2/stdlib/math-operations.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/math-operations.html">
+            
+                    
+                        <b>3.1.1.11.3.</b>
+                    
+                    Math Operations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11.4" data-path="../../../kotlin/features/1.2/stdlib/operations-and-conversions-for-biginteger-and-bigdecimal.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/operations-and-conversions-for-biginteger-and-bigdecimal.html">
+            
+                    
+                        <b>3.1.1.11.4.</b>
+                    
+                    Operators and Conversions for BigInteger and BigDecimal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11.5" data-path="../../../kotlin/features/1.2/stdlib/floating-point-to-bits-conversations.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/floating-point-to-bits-conversations.html">
+            
+                    
+                        <b>3.1.1.11.5.</b>
+                    
+                    Floating Point to Bits Conversions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11.6" data-path="../../../kotlin/features/1.2/stdlib/serializable-regex.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/serializable-regex.html">
+            
+                    
+                        <b>3.1.1.11.6.</b>
+                    
+                    Serializable Regex
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.11.7" data-path="../../../kotlin/features/1.2/stdlib/closeable-us-calls-throwable-addsuppressed-if-available.html">
+            
+                <a href="../../../kotlin/features/1.2/stdlib/closeable-us-calls-throwable-addsuppressed-if-available.html">
+            
+                    
+                        <b>3.1.1.11.7.</b>
+                    
+                    Closeable.use calls Throwable.addSuppressed if available
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.12" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.12.</b>
+                    
+                    JVM Backend
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.12.1" data-path="../../../kotlin/features/1.2/jvm/constructor-calls-normalization.html">
+            
+                <a href="../../../kotlin/features/1.2/jvm/constructor-calls-normalization.html">
+            
+                    
+                        <b>3.1.1.12.1.</b>
+                    
+                    Constructor Calls Normalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.12.2" data-path="../../../kotlin/features/1.2/jvm/java-default-method-calls.html">
+            
+                <a href="../../../kotlin/features/1.2/jvm/java-default-method-calls.html">
+            
+                    
+                        <b>3.1.1.12.2.</b>
+                    
+                    Java-default Method Calls
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.12.3" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.12.3.</b>
+                    
+                    Breaking Change
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.12.3.1" data-path="../../../kotlin/features/1.2/jvm/breaking-change/consistent-behavior-of-x-equals-null-for-platform-types.html">
+            
+                <a href="../../../kotlin/features/1.2/jvm/breaking-change/consistent-behavior-of-x-equals-null-for-platform-types.html">
+            
+                    
+                        <b>3.1.1.12.3.1.</b>
+                    
+                    Consistent Behavior of x.equals(null) for Platform Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.13" >
+            
+                <span>
+            
+                    
+                        <b>3.1.1.13.</b>
+                    
+                    JavaScript Backend
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.13.1" data-path="../../../kotlin/features/1.2/javascript/typed-arrays-support-enabled-by-default.html">
+            
+                <a href="../../../kotlin/features/1.2/javascript/typed-arrays-support-enabled-by-default.html">
+            
+                    
+                        <b>3.1.1.13.1.</b>
+                    
+                    TypedArrays support enabled by default
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" >
+            
+                <span>
+            
+                    
+                        <b>3.1.2.</b>
+                    
+                    Kotlin 1.1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../../../kotlin/features/1.1/coroutines.html">
+            
+                <a href="../../../kotlin/features/1.1/coroutines.html">
+            
+                    
+                        <b>3.1.2.1.</b>
+                    
+                    Coroutines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../../../kotlin/features/1.1/type-aliases.html">
+            
+                <a href="../../../kotlin/features/1.1/type-aliases.html">
+            
+                    
+                        <b>3.1.2.2.</b>
+                    
+                    Type Aliases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../../../kotlin/features/1.1/bound-callable-references.html">
+            
+                <a href="../../../kotlin/features/1.1/bound-callable-references.html">
+            
+                    
+                        <b>3.1.2.3.</b>
+                    
+                    Bound Callable References
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" data-path="../../../kotlin/features/1.1/sealed-and-data-classes.html">
+            
+                <a href="../../../kotlin/features/1.1/sealed-and-data-classes.html">
+            
+                    
+                        <b>3.1.2.4.</b>
+                    
+                    Sealed and Data Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.5" data-path="../../../kotlin/features/1.1/destructuring-in-lambdas.html">
+            
+                <a href="../../../kotlin/features/1.1/destructuring-in-lambdas.html">
+            
+                    
+                        <b>3.1.2.5.</b>
+                    
+                    Destructuring in Lambdas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.6" data-path="../../../kotlin/features/1.1/underscores-for-unused-parameters.html">
+            
+                <a href="../../../kotlin/features/1.1/underscores-for-unused-parameters.html">
+            
+                    
+                        <b>3.1.2.6.</b>
+                    
+                    Underscores for Unused Parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.7" data-path="../../../kotlin/features/1.1/underscores-in-numeric-literals.html">
+            
+                <a href="../../../kotlin/features/1.1/underscores-in-numeric-literals.html">
+            
+                    
+                        <b>3.1.2.7.</b>
+                    
+                    Underscores in Numeric Literals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.8" data-path="../../../kotlin/features/1.1/shorter-syntax-for-properties.html">
+            
+                <a href="../../../kotlin/features/1.1/shorter-syntax-for-properties.html">
+            
+                    
+                        <b>3.1.2.8.</b>
+                    
+                    Shorter Syntax for Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.9" data-path="../../../kotlin/features/1.1/inline-property-accessors.html">
+            
+                <a href="../../../kotlin/features/1.1/inline-property-accessors.html">
+            
+                    
+                        <b>3.1.2.9.</b>
+                    
+                    Inline Property Accessors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.10" data-path="../../../kotlin/features/1.1/local-delegated-properties.html">
+            
+                <a href="../../../kotlin/features/1.1/local-delegated-properties.html">
+            
+                    
+                        <b>3.1.2.10.</b>
+                    
+                    Local Delegated Properties
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.11" data-path="../../../kotlin/features/1.1/interception-of-delegated-property-binding.html">
+            
+                <a href="../../../kotlin/features/1.1/interception-of-delegated-property-binding.html">
+            
+                    
+                        <b>3.1.2.11.</b>
+                    
+                    Interception of Delegated Property Binding
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.12" data-path="../../../kotlin/features/1.1/generic-enum-value-access.html">
+            
+                <a href="../../../kotlin/features/1.1/generic-enum-value-access.html">
+            
+                    
+                        <b>3.1.2.12.</b>
+                    
+                    Generic Enum Value Access
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.13" data-path="../../../kotlin/features/1.1/scope-control-for-implicit-receivers-in-dsls.html">
+            
+                <a href="../../../kotlin/features/1.1/scope-control-for-implicit-receivers-in-dsls.html">
+            
+                    
+                        <b>3.1.2.13.</b>
+                    
+                    Scope Control for Implicit Receivers in DSLs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.14" data-path="../../../kotlin/features/1.1/rem-operator.html">
+            
+                <a href="../../../kotlin/features/1.1/rem-operator.html">
+            
+                    
+                        <b>3.1.2.14.</b>
+                    
+                    rem Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15" >
+            
+                <span>
+            
+                    
+                        <b>3.1.2.15.</b>
+                    
+                    Standard Library
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.15.1" data-path="../../../kotlin/features/1.1/stdlib/string-to-number-conversions.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/string-to-number-conversions.html">
+            
+                    
+                        <b>3.1.2.15.1.</b>
+                    
+                    String to Number Conversions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.2" data-path="../../../kotlin/features/1.1/stdlib/on-each.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/on-each.html">
+            
+                    
+                        <b>3.1.2.15.2.</b>
+                    
+                    onEach()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.3" data-path="../../../kotlin/features/1.1/stdlib/also-takeif-and-takeunless.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/also-takeif-and-takeunless.html">
+            
+                    
+                        <b>3.1.2.15.3.</b>
+                    
+                    also(), takeIf() and takeUnless()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.4" data-path="../../../kotlin/features/1.1/stdlib/grouping-by.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/grouping-by.html">
+            
+                    
+                        <b>3.1.2.15.4.</b>
+                    
+                    groupingBy()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.5" data-path="../../../kotlin/features/1.1/stdlib/map-tomap-and-map-tomutablemap.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/map-tomap-and-map-tomutablemap.html">
+            
+                    
+                        <b>3.1.2.15.5.</b>
+                    
+                    Map.toMap() and Map.toMutableMap()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.6" data-path="../../../kotlin/features/1.1/stdlib/map-minus-key.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/map-minus-key.html">
+            
+                    
+                        <b>3.1.2.15.6.</b>
+                    
+                    Map.minus(key)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.7" data-path="../../../kotlin/features/1.1/stdlib/minof-and-maxof.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/minof-and-maxof.html">
+            
+                    
+                        <b>3.1.2.15.7.</b>
+                    
+                    minOf() and maxOf()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.8" data-path="../../../kotlin/features/1.1/stdlib/array-like-list-instantiation-functions.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/array-like-list-instantiation-functions.html">
+            
+                    
+                        <b>3.1.2.15.8.</b>
+                    
+                    Array-like List Instantiation Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.9" data-path="../../../kotlin/features/1.1/stdlib/map-getvalue.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/map-getvalue.html">
+            
+                    
+                        <b>3.1.2.15.9.</b>
+                    
+                    Map.getValue()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.10" data-path="../../../kotlin/features/1.1/stdlib/abstraction-collections.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/abstraction-collections.html">
+            
+                    
+                        <b>3.1.2.15.10.</b>
+                    
+                    Abstract Collections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.15.11" data-path="../../../kotlin/features/1.1/stdlib/array-manipulation-functions.html">
+            
+                <a href="../../../kotlin/features/1.1/stdlib/array-manipulation-functions.html">
+            
+                    
+                        <b>3.1.2.15.11.</b>
+                    
+                    Array Manipulation Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16" >
+            
+                <span>
+            
+                    
+                        <b>3.1.2.16.</b>
+                    
+                    JVM Backend
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.16.1" data-path="../../../kotlin/features/1.1/jvm/java-8-bytecode-support.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/java-8-bytecode-support.html">
+            
+                    
+                        <b>3.1.2.16.1.</b>
+                    
+                    Java 8 Bytecode Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16.2" data-path="../../../kotlin/features/1.1/jvm/java-8-stdlib-support.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/java-8-stdlib-support.html">
+            
+                    
+                        <b>3.1.2.16.2.</b>
+                    
+                    Java 8 Standard Library Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16.3" data-path="../../../kotlin/features/1.1/jvm/parameter-names-in-bytecode.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/parameter-names-in-bytecode.html">
+            
+                    
+                        <b>3.1.2.16.3.</b>
+                    
+                    Parameter Names in Bytecode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16.4" data-path="../../../kotlin/features/1.1/jvm/constant-inlining.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/constant-inlining.html">
+            
+                    
+                        <b>3.1.2.16.4.</b>
+                    
+                    Constant Inlining
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16.5" data-path="../../../kotlin/features/1.1/jvm/mutable-closure-variables.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/mutable-closure-variables.html">
+            
+                    
+                        <b>3.1.2.16.5.</b>
+                    
+                    Mutable Closure Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16.6" data-path="../../../kotlin/features/1.1/jvm/javax-script-support.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/javax-script-support.html">
+            
+                    
+                        <b>3.1.2.16.6.</b>
+                    
+                    javax.script Support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.16.7" data-path="../../../kotlin/features/1.1/jvm/kotlin-reflect-full.html">
+            
+                <a href="../../../kotlin/features/1.1/jvm/kotlin-reflect-full.html">
+            
+                    
+                        <b>3.1.2.16.7.</b>
+                    
+                    kotlin.reflect.full
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.17" >
+            
+                <span>
+            
+                    
+                        <b>3.1.2.17.</b>
+                    
+                    JavaScript Backend
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.17.1" data-path="../../../kotlin/features/1.1/javascript/unified-stdlib.html">
+            
+                <a href="../../../kotlin/features/1.1/javascript/unified-stdlib.html">
+            
+                    
+                        <b>3.1.2.17.1.</b>
+                    
+                    Unified Standard Library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.17.2" data-path="../../../kotlin/features/1.1/javascript/better-code-generation.html">
+            
+                <a href="../../../kotlin/features/1.1/javascript/better-code-generation.html">
+            
+                    
+                        <b>3.1.2.17.2.</b>
+                    
+                    Better Code Generation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.17.3" data-path="../../../kotlin/features/1.1/javascript/the-external-modifier.html">
+            
+                <a href="../../../kotlin/features/1.1/javascript/the-external-modifier.html">
+            
+                    
+                        <b>3.1.2.17.3.</b>
+                    
+                    The external Modifier
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.17.4" data-path="../../../kotlin/features/1.1/javascript/improved-import-handling.html">
+            
+                <a href="../../../kotlin/features/1.1/javascript/improved-import-handling.html">
+            
+                    
+                        <b>3.1.2.17.4.</b>
+                    
+                    Improved Import Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                        <b>3.2.</b>
+                    
+                    Kotlin/Native
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../kotlin/konan.html">
+            
+                <a href="../../../kotlin/konan.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    konan
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Android</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                        <b>4.1.</b>
+                    
+                    Features
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../../android/features/9.0/">
+            
+                <a href="../../../android/features/9.0/">
+            
+                    
+                        <b>4.1.1.</b>
+                    
+                    Android 9.0 - Pie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../../android/features/8.0/">
+            
+                <a href="../../../android/features/8.0/">
+            
+                    
+                        <b>4.1.2.</b>
+                    
+                    Android 8.0 - Oreo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../../android/features/7.0/">
+            
+                <a href="../../../android/features/7.0/">
+            
+                    
+                        <b>4.1.3.</b>
+                    
+                    Android 7.0 - Nougat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../../android/features/6.0/">
+            
+                <a href="../../../android/features/6.0/">
+            
+                    
+                        <b>4.1.4.</b>
+                    
+                    Android 6.0 - Marshmallow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../../android/features/5.0/">
+            
+                <a href="../../../android/features/5.0/">
+            
+                    
+                        <b>4.1.5.</b>
+                    
+                    Android 5.0 - Lollipop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../../android/features/4.4/">
+            
+                <a href="../../../android/features/4.4/">
+            
+                    
+                        <b>4.1.6.</b>
+                    
+                    Android 4.4 - KitKat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.</b>
+                    
+                    System
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" >
+            
+                <span>
+            
+                    
+                        <b>4.2.1.</b>
+                    
+                    Linux Kernal
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1.1" >
+            
+                <span>
+            
+                    
+                        <b>4.2.1.1.</b>
+                    
+                    IPC
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.2.</b>
+                    
+                    Hardware Abstraction Layer
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.2.1" >
+            
+                <span>
+            
+                    
+                        <b>4.2.2.1.</b>
+                    
+                    Audio
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.2.2.</b>
+                    
+                    Bluetooth
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.3" >
+            
+                <span>
+            
+                    
+                        <b>4.2.2.3.</b>
+                    
+                    Camera
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.4" >
+            
+                <span>
+            
+                    
+                        <b>4.2.2.4.</b>
+                    
+                    Sensors
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" >
+            
+                <span>
+            
+                    
+                        <b>4.2.3.</b>
+                    
+                    Runtime
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.1" >
+            
+                <span>
+            
+                    
+                        <b>4.2.3.1.</b>
+                    
+                    Dalvik VM
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.3.2.</b>
+                    
+                    ART
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.</b>
+                    
+                    Framework
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.4.1" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.1.</b>
+                    
+                    Activity Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.2" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.2.</b>
+                    
+                    Window Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.3" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.3.</b>
+                    
+                    View System
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.4" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.4.</b>
+                    
+                    Content Provider
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.5" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.5.</b>
+                    
+                    Notification Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.6" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.6.</b>
+                    
+                    Package Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.7" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.7.</b>
+                    
+                    Telephony Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.8" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.8.</b>
+                    
+                    Location Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4.9" >
+            
+                <span>
+            
+                    
+                        <b>4.2.4.9.</b>
+                    
+                    Resource Manager
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Hybrid</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                        <b>5.1.</b>
+                    
+                    WebView
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                        <b>5.2.</b>
+                    
+                    React Native
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                        <b>5.3.</b>
+                    
+                    Weex
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Design Pattern</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                        <b>6.1.</b>
+                    
+                    Creational
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../../design-pattern/abstract-factory.html">
+            
+                <a href="../../../design-pattern/abstract-factory.html">
+            
+                    
+                        <b>6.1.1.</b>
+                    
+                    Abstract Factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../../../design-pattern/builder.html">
+            
+                <a href="../../../design-pattern/builder.html">
+            
+                    
+                        <b>6.1.2.</b>
+                    
+                    Builder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.3" data-path="../../../design-pattern/factory-method.html">
+            
+                <a href="../../../design-pattern/factory-method.html">
+            
+                    
+                        <b>6.1.3.</b>
+                    
+                    Factory Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.4" data-path="../../../design-pattern/object-pool.html">
+            
+                <a href="../../../design-pattern/object-pool.html">
+            
+                    
+                        <b>6.1.4.</b>
+                    
+                    Object Pool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.5" data-path="../../../design-pattern/prototype.html">
+            
+                <a href="../../../design-pattern/prototype.html">
+            
+                    
+                        <b>6.1.5.</b>
+                    
+                    Prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.6" data-path="../../../design-pattern/singleton.html">
+            
+                <a href="../../../design-pattern/singleton.html">
+            
+                    
+                        <b>6.1.6.</b>
+                    
+                    Singleton
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                        <b>6.2.</b>
+                    
+                    Structural
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../../design-pattern/adapter.html">
+            
+                <a href="../../../design-pattern/adapter.html">
+            
+                    
+                        <b>6.2.1.</b>
+                    
+                    Adapter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../../../design-pattern/bridge.html">
+            
+                <a href="../../../design-pattern/bridge.html">
+            
+                    
+                        <b>6.2.2.</b>
+                    
+                    Bridge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="../../../design-pattern/composite.html">
+            
+                <a href="../../../design-pattern/composite.html">
+            
+                    
+                        <b>6.2.3.</b>
+                    
+                    Composite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="../../../design-pattern/decorator.html">
+            
+                <a href="../../../design-pattern/decorator.html">
+            
+                    
+                        <b>6.2.4.</b>
+                    
+                    Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.5" data-path="../../../design-pattern/facade.html">
+            
+                <a href="../../../design-pattern/facade.html">
+            
+                    
+                        <b>6.2.5.</b>
+                    
+                    Facade
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.6" data-path="../../../design-pattern/flyweight.html">
+            
+                <a href="../../../design-pattern/flyweight.html">
+            
+                    
+                        <b>6.2.6.</b>
+                    
+                    Flyweight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.7" data-path="../../../design-pattern/private-class-data.html">
+            
+                <a href="../../../design-pattern/private-class-data.html">
+            
+                    
+                        <b>6.2.7.</b>
+                    
+                    Private Class Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.8" data-path="../../../design-pattern/proxy.html">
+            
+                <a href="../../../design-pattern/proxy.html">
+            
+                    
+                        <b>6.2.8.</b>
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <span>
+            
+                    
+                        <b>6.3.</b>
+                    
+                    Behavioral
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../../../design-pattern/chain-of-responsibility.html">
+            
+                <a href="../../../design-pattern/chain-of-responsibility.html">
+            
+                    
+                        <b>6.3.1.</b>
+                    
+                    Chain of Responsibility
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="../../../design-pattern/command.html">
+            
+                <a href="../../../design-pattern/command.html">
+            
+                    
+                        <b>6.3.2.</b>
+                    
+                    Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3" data-path="../../../design-pattern/interpreter.html">
+            
+                <a href="../../../design-pattern/interpreter.html">
+            
+                    
+                        <b>6.3.3.</b>
+                    
+                    Interpreter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.4" data-path="../../../design-pattern/iterator.html">
+            
+                <a href="../../../design-pattern/iterator.html">
+            
+                    
+                        <b>6.3.4.</b>
+                    
+                    Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.5" data-path="../../../design-pattern/mediator.html">
+            
+                <a href="../../../design-pattern/mediator.html">
+            
+                    
+                        <b>6.3.5.</b>
+                    
+                    Mediator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.6" data-path="../../../design-pattern/memento.html">
+            
+                <a href="../../../design-pattern/memento.html">
+            
+                    
+                        <b>6.3.6.</b>
+                    
+                    Memento
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.7" data-path="../../../design-pattern/null-object.html">
+            
+                <a href="../../../design-pattern/null-object.html">
+            
+                    
+                        <b>6.3.7.</b>
+                    
+                    Null Object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.8" data-path="../../../design-pattern/observer.html">
+            
+                <a href="../../../design-pattern/observer.html">
+            
+                    
+                        <b>6.3.8.</b>
+                    
+                    Observer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.9" data-path="../../../design-pattern/state.html">
+            
+                <a href="../../../design-pattern/state.html">
+            
+                    
+                        <b>6.3.9.</b>
+                    
+                    State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.10" data-path="../../../design-pattern/strategy.html">
+            
+                <a href="../../../design-pattern/strategy.html">
+            
+                    
+                        <b>6.3.10.</b>
+                    
+                    Strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.11" data-path="../../../design-pattern/template-method.html">
+            
+                <a href="../../../design-pattern/template-method.html">
+            
+                    
+                        <b>6.3.11.</b>
+                    
+                    Template Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.12" data-path="../../../design-pattern/visitor.html">
+            
+                <a href="../../../design-pattern/visitor.html">
+            
+                    
+                        <b>6.3.12.</b>
+                    
+                    Visitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Reverse Engineering</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" >
+            
+                <span>
+            
+                    
+                        <b>7.1.</b>
+                    
+                    Release APK Debugging
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >Lambda Expressions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lambda-expressions">Lambda Expressions</h1>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="pipelines-and-streams.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Pipelines and Streams">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Lambda Expressions","level":"2.1.1.1","depth":3,"next":{"title":"Pipelines and Streams","level":"2.1.1.2","depth":3,"path":"content/java/features/java-se-8/pipelines-and-streams.md","ref":"content/java/features/java-se-8/pipelines-and-streams.md","articles":[]},"previous":{"title":"Java SE 8","level":"2.1.1","depth":2,"ref":"","articles":[{"title":"Lambda Expressions","level":"2.1.1.1","depth":3,"path":"content/java/features/java-se-8/lambda-expressions.md","ref":"content/java/features/java-se-8/lambda-expressions.md","articles":[]},{"title":"Pipelines and Streams","level":"2.1.1.2","depth":3,"path":"content/java/features/java-se-8/pipelines-and-streams.md","ref":"content/java/features/java-se-8/pipelines-and-streams.md","articles":[]},{"title":"Date and Time API","level":"2.1.1.3","depth":3,"path":"content/java/features/java-se-8/date-and-time-api.md","ref":"content/java/features/java-se-8/date-and-time-api.md","articles":[]},{"title":"Default Methods","level":"2.1.1.4","depth":3,"path":"content/java/features/java-se-8/default-methods.md","ref":"content/java/features/java-se-8/default-methods.md","articles":[]},{"title":"Type Annotations","level":"2.1.1.5","depth":3,"path":"content/java/features/java-se-8/type-annotations.md","ref":"content/java/features/java-se-8/type-annotations.md","articles":[]},{"title":"Type Inference","level":"2.1.1.6","depth":3,"path":"content/java/features/java-se-8/type-inference.md","ref":"content/java/features/java-se-8/type-inference.md","articles":[]},{"title":"Method Parameter Reflection","level":"2.1.1.7","depth":3,"path":"content/java/features/java-se-8/method-parameter-reflection.md","ref":"content/java/features/java-se-8/method-parameter-reflection.md","articles":[]},{"title":"Nashorn JavaScript Engine","level":"2.1.1.8","depth":3,"path":"content/java/features/java-se-8/nashorn-javascript-engine.md","ref":"content/java/features/java-se-8/nashorn-javascript-engine.md","articles":[]},{"title":"Concurrent Accumulators","level":"2.1.1.9","depth":3,"path":"content/java/features/java-se-8/concurrent-accumulators.md","ref":"content/java/features/java-se-8/concurrent-accumulators.md","articles":[]},{"title":"Parallel operations","level":"2.1.1.10","depth":3,"path":"content/java/features/java-se-8/parallel-operations.md","ref":"content/java/features/java-se-8/parallel-operations.md","articles":[]},{"title":"PermGen Error Removed","level":"2.1.1.11","depth":3,"path":"content/java/features/java-se-8/permgen-error-removed.md","ref":"content/java/features/java-se-8/permgen-error-removed.md","articles":[]},{"title":"TLS SNI","level":"2.1.1.12","depth":3,"path":"content/java/features/java-se-8/tls-sni.md","ref":"content/java/features/java-se-8/tls-sni.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mathjax","splitter","codeblock-filename","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"codeblock-filename":{},"theme-comscore":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android开发者指南","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.1.0","description":""},"file":{"path":"content/java/features/java-se-8/lambda-expressions.md","mtime":"2018-08-29T17:18:07.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-29T20:20:35.427Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

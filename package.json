@@ -1,0 +1,33 @@
+{
+  "name": "android-developer-guideline",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/gitbook serve . docs",
+    "serve": "yarn start",
+    "build": "./node_modules/.bin/gitbook build . docs",
+    "deploy": "yarn build && git add . && git commit -m \"publish\" && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/instlab/android-developer-guideline.git"
+  },
+  "author": "Johnson Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/instlab/android-developer-guideline/issues"
+  },
+  "homepage": "https://github.com/instlab/android-developer-guideline",
+  "dependencies": {
+    "gitbook-cli": "^2.3.2",
+    "gitbook-plugin-codeblock-filename": "0.0.9",
+    "gitbook-plugin-mathjax": "^1.1.2",
+    "gitbook-plugin-splitter": "0.0.8",
+    "gitbook-plugin-theme-comscore": "0.0.3",
+    "gitbook-theme-comscore": "0.0.3"
+  }
+}

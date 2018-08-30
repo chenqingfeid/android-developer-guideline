@@ -1,0 +1,2 @@
+# Inline Property Accessors
+
