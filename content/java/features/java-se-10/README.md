@@ -27,7 +27,7 @@ var stream = list.stream();          // infers Stream<String>
 
 ## Garbage-Collector Interface
 
-在 JDK 10 增加了不同垃圾回收器的代码隔离，并引入了一个干净的接口，这意味着从 JDK 构建中排除 GC 更容易，同时也更容易增加新的 GC 而不影响代码库。关于 G1 垃圾回收以及 G1 与并发标记清除垃圾回收器的差异，请参考 [Java 内存管理](https://click.linksynergy.com/fs-bin/click?id=JVFxdTr9V80&subid=0&offerid=323058.1&type=10&tmpid=14538&RD_PARM1=https%3A%2F%2Fwww.udemy.com%2Fjava-memory-management%2F)。
+在 JDK 10 增加了不同垃圾回收器的代码隔离，并引入了一个干净的接口，这意味着从 JDK 构建中排除 GC 更容易，同时也更容易增加新的 GC 而不影响代码库。关于 G1 垃圾回收以及 G1 与并发标记清除垃圾回收器的差异，请参考 [Java 内存管理](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html)。
 
 
 
