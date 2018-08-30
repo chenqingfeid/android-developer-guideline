@@ -1,2 +1,0 @@
-# Local Delegated Properties
-

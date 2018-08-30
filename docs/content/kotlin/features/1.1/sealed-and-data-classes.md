@@ -1,2 +1,0 @@
-# Sealed and Data Classes
-

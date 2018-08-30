@@ -1,2 +1,0 @@
-# String to Number Conversions
-

@@ -1,2 +1,0 @@
-# windowed, chunked, zipWithNext
-

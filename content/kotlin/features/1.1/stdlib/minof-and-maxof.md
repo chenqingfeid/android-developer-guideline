@@ -1,2 +1,0 @@
-# minOf() and maxOf()
-

@@ -1,2 +1,0 @@
-# Mutable Closure Variables
-

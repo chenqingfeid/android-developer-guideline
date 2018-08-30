@@ -1,2 +1,0 @@
-# Shorthand for Callbale References
-

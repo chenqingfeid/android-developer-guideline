@@ -1,2 +1,0 @@
-# javax.script Support
-

@@ -1,2 +1,0 @@
-# Shorter Syntax for Properties
-

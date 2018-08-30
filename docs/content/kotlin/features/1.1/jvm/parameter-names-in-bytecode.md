@@ -1,2 +1,0 @@
-# Parameter Names in Bytecode
-
