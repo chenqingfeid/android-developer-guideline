@@ -4,7 +4,7 @@
 
 ## Local-Variable Type Inference
 
-为了提高开发者体验，同时保挂 Java 对静态类型安全的承诺，JDK 10 允许开发者省去平常不必要的本地变量类型声明，从而改善开发人员的体验。 例如：
+为了提高开发者体验，同时保持 Java 对静态类型安全的承诺，JDK 10 允许开发者省去平常不必要的本地变量类型声明，从而改善开发人员的体验。 例如：
 
 ```java
 var list = new ArrayList<String>();  // infers ArrayList<String>
