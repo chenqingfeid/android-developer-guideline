@@ -10,7 +10,7 @@
     "start": "./node_modules/.bin/gitbook serve . docs",
     "serve": "yarn start",
     "build": "./node_modules/.bin/gitbook build . docs",
-    "deploy": "yarn build && git add . && git commit -m \"publish\" && git push"
+    "deploy": "yarn build && git add . && git commit -m \"publish\" && git push origin master:master"
   },
   "repository": {
     "type": "git",

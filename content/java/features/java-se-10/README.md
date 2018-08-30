@@ -59,6 +59,28 @@ Thread-Local 握手这个功能为提高虚拟机性能奠定了基础，因为�
 
 ## Additional Unicode Language-Tag Extensions
 
+在 Java SE 9 中支持的 BCP 47 U 语言标记的扩展名是 ca 和 nu，在 Java 10 中，增加了对以下附加扩展的支持：
+
+- cu (currency type) - 货币类型
+- fw (first day of week) - 每周第一天
+- rg (region override) - 区域覆盖
+- tz (time zone) - 时区
+
+为了支持这些附加扩展，Java 10 对下面 API 进行了更改：
+
+- `java.text.DateFormat::get*Instance` 返回基于 `ca`， `rg`， `tz` 扩展的实例
+- `java.text.DateFormatSymbols::getInstance` 返回基于 `rg `扩展的实例
+- `java.text.DecimalFormatSymbols::getInstance` 返回基于 `rg` 扩展的实例
+- `java.text.NumberFormat::get*Instance` 返回基于 `nu`，`rg` 扩展的实例
+- `java.time.format.DateTimeFormatter::localizedBy` 返回基于 `ca`，`rg`，`tz` 扩展的实例
+- `java.time.format.DateTimeFormatterBuilder::getLocalizedDateTimePattern` 返回基于 `rg` 扩展的模式字符串
+- `java.time.format.DecimalStyle::of` 返回基于 `nu`，`rg` 扩展的 `DecimalStyle` 实例
+- `java.time.temporal.WeekFields::of` 返回基于 `fw`，`rg` 扩展的 `WeekFields` 实例
+- `java.util.Calendar::{getFirstDayOfWeek,getMinimalDaysInWeek}` 返回基于 `fw`，`rg` 扩展的值
+- `java.util.Currency::getInstance` 返回基于 `cu`，`rg` 扩展的 `Currency` 实例
+- `java.util.Locale::getDisplayName` 返回包含这些 U 扩展的 `display name` 的字符串
+- `java.util.spi.LocaleNameProvider` 有新的 SPI 作为这些 U 扩展的键和类型
+
 
 
 ## Heap Allocation on Alternative Memory Devices
