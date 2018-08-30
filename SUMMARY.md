@@ -5,7 +5,7 @@
 ## Java
 * Features
     * Java SE 10
-        * 
+  *
     * Java SE 9
         * [Module System](content/java/features/java-se-9/module-system.md)
         * [Version-String Scheme](content/java/features/java-se-9/version-string-scheme.md)
@@ -187,11 +187,13 @@
         * [File-Based Encryption](content/android/security/encryption/file-based.md)
         * [Full-Disk Encryption](content/android/security/encryption/full-disk.md)
         * [Metadata Encryption](content/android/security/encryption/metadata.md)
-    * [SE Linux]()
+    * [SELinux](content/android/security/selinux/README.md)
+    * [Verified Boot](content/android/security/verified-boot/README.md)
 
 ## Build Tools
 * [Android Gradle Plugin](content/build-tools/android-gradle-plugin/README.md)
     * [Transform API](content/build-tools/android-gradle-plugin/transform-api.md)
+    * [Instant Run](content/build-tools/android-gradle-plugin/instant-run.md)
 
 ## Hybrid
 * WebView
