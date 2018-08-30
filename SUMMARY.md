@@ -1,9 +1,9 @@
 # Summary
 
-* [Preface](README.md)
+* [序言](README.md)
 
 ## Java
-* Features
+* 新特性
     * [Java SE 10](content/java/features/java-se-10/README.md)
     * [Java SE 9](content/java/features/java-se-9/README.md)
     * [Java SE 8](content/java/features/java-se-8/README.md)
@@ -11,70 +11,67 @@
     * [Java SE 6](content/java/features/java-se-6/README.md)
     * [J2SE 5.0](content/java/features/j2se-5.0/README.md)
     * [J2SE 1.4](content/java/features/j2se-1.4/README.md)
-* [Java Virtual Machine](content/java/jvm/README.md)
-    * The class File Format
-    * Data Types
-    * Primitive Types and Values
-    * References Types and Values
-    * Run-Time Data Area
-        * The pc Register
-        * Java Virtual Machine Stacks
-        * Heap
-        * Method Area
-        * Run-Time Constant Pool
-        * Native Method Stacks
-    * Frames
-        * Local Variables
-        * Operand Stacks
-        * Dynamic Linking
-        * Normal Method Completion
-        * Abrupt Method Completion
-    * Representation of Objects
-    * Floating-Paint Arithmatic
-    * Special Methods
-    * Exceptions
-    * Instruction Set
-    * Class Libraries
-    * Public Design, Private Implementation
+* [Java 虚拟机](content/java/jvm/README.md)
+    * class 文件格式
+    * 数据类型
+    * 原始类型和值
+    * 引用类型和值
+    * 运行时数据区
+        * `pc` 寄存器
+        * 虚拟机栈
+        * 堆
+        * 方法区
+        * 运行时常量池
+        * Native 方法栈
+    * 帧
+        * 局部变量
+        * 操作数栈
+        * 动态链接
+    * 对象的表示
+    * 浮点运算
+    * 特殊方法
+    * 异常
+    * 指令集
+    * 类库
 * [Java Native Interface](content/java/jni/README.md)
 
 ## Kotlin
-* Features
+* 新特性
     * [Kotlin 1.2](content/kotlin/features/1.2/README.md)
     * [Kotlin 1.1](content/kotlin/features/1.1/README.md)
 * Kotlin/Native
     * [konan](content/kotlin/konan.md)
 
 ## Garbage Collection
-* [Memory Management](content/garbage-collection/memory-management/README.md)
-    * [Manual Memory Management](content/garbage-collection/memory-management/manual.md)
-    * [Automated Memory Management](content/garbage-collection/memory-management/automated.md)
+* [内存管理](content/garbage-collection/memory-management/README.md)
+    * [手动管理](content/garbage-collection/memory-management/manual.md)
+    * [自动管理](content/garbage-collection/memory-management/automated.md)
 * [Garbage Collection in Java](content/garbage-collection/gc-in-java/README.md)
-    * [Fragmenting and Compacting](content/garbage-collection/gc-in-java/fragmenting-and-compacting.md)
-    * [Generational Hypothesis](content/garbage-collection/gc-in-java/generational-hypothesis.md)
-    * [Memory Pools](content/garbage-collection/gc-in-java/memory-pools.md)
+    * [分段和压缩](content/garbage-collection/gc-in-java/fragmenting-and-compacting.md)
+    * [代际假设](content/garbage-collection/gc-in-java/generational-hypothesis.md)
+    * [内存池](content/garbage-collection/gc-in-java/memory-pools.md)
     * [Minor GC](content/garbage-collection/gc-in-java/minor-gc.md)
     * [Major GC](content/garbage-collection/gc-in-java/major-gc.md)
     * [Full GC](content/garbage-collection/gc-in-java/full-gc.md)
-* [GC Algorithms](content/garbage-collection/gc-algorithms/README.md)
-    * [Marking Reachable Objects](content/garbage-collection/gc-algorithms/marking-reachable-objects.md)
-    * [Removing Unused Objects](content/garbage-collection/gc-algorithms/removing-unused-objects.md)
-* [GC Implementations](content/garbage-collection/gc-implementations/README.md)
-    * [Serial GC](content/garbage-collection/gc-implementations/serial-gc.md)
-    * [Parallel GC](content/garbage-collection/gc-implementations/parallel-gc.md)
-    * [Concurrent Mark and Sweep](content/garbage-collection/gc-implementations/concurrent-mark-and-sweep.md)
+* [GC 算法](content/garbage-collection/gc-algorithms/README.md)
+    * [标记可达对象](content/garbage-collection/gc-algorithms/marking-reachable-objects.md)
+    * [移除无用对象](content/garbage-collection/gc-algorithms/removing-unused-objects.md)
+* [GC 实现](content/garbage-collection/gc-implementations/README.md)
+    * [串行 GC](content/garbage-collection/gc-implementations/serial-gc.md)
+    * [并行 GC](content/garbage-collection/gc-implementations/parallel-gc.md)
+    * [并发标记清除](content/garbage-collection/gc-implementations/concurrent-mark-and-sweep.md)
     * [G1 - Garbage First](content/garbage-collection/gc-implementations/g1.md)
     * [Shenandoah](content/garbage-collection/gc-implementations/shenandoah.md)
 
 ## Android
-* Features
+* 新特性
     * [Android 9.0 - Pie](content/android/features/9.0/README.md)
     * [Android 8.0 - Oreo](content/android/features/8.0/README.md)
     * [Android 7.0 - Nougat](content/android/features/7.0/README.md)
     * [Android 6.0 - Marshmallow](content/android/features/6.0/README.md)
     * [Android 5.0 - Lollipop](content/android/features/5.0/README.md)
     * [Android 4.4 - KitKat](content/android/features/4.4/README.md)
-* System
+* 系统
     * [Linux Kernel](content/android/system/kernel/README.md)
         * [IPC](content/android/system/kernel/ipc.md)
     * [Hardware Abstraction Layer](content/android/system/hal/README.md)
@@ -102,7 +99,7 @@
         * [Building](content/android/system/ndk/building.md)
         * [CPUs and Architectures](content/android/system/ndk/cpus-and-architectures.md)
         * [Debugging](content/android/system/ndk/debugging.md)
-* Security
+* 安全
     * [Application Sandbox](content/android/security/app-sandbox.md)
     * [Application Signing](content/android/security/app-signing/README.md)
         * [APK Signature Scheme V3](content/android/security/apk-signing/v3.md)
@@ -132,15 +129,15 @@
 * React Native
 * Weex
 
-## Design Pattern
-* Creational
+## 设计模式
+* 创造型
     * [Abstract Factory](content/design-pattern/abstract-factory.md)
     * [Builder](content/design-pattern/builder.md)
     * [Factory Method](content/design-pattern/factory-method.md)
     * [Object Pool](content/design-pattern/object-pool.md)
     * [Prototype](content/design-pattern/prototype.md)
     * [Singleton](content/design-pattern/singleton.md)
-* Structural
+* 结构型
     * [Adapter](content/design-pattern/adapter.md)
     * [Bridge](content/design-pattern/bridge.md)
     * [Composite](content/design-pattern/composite.md)
@@ -149,7 +146,7 @@
     * [Flyweight](content/design-pattern/flyweight.md)
     * [Private Class Data](content/design-pattern/private-class-data.md)
     * [Proxy](content/design-pattern/proxy.md)
-* Behavioral
+* 行为型
     * [Chain of Responsibility](content/design-pattern/chain-of-responsibility.md)
     * [Command](content/design-pattern/command.md)
     * [Interpreter](content/design-pattern/interpreter.md)
@@ -164,5 +161,5 @@
     * [Visitor](content/design-pattern/visitor.md)
 
 ## Reverse Engineering
-* Release APK Debugging
+* 调试 Release APK
 
