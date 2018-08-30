@@ -1,7 +1,7 @@
 {
     "gitbook": ">=3.1.0",
-    "title": "Android开发者指南",
-    "description": "",
+    "title": "Android Developer Guideline",
+    "description": "Android 开发者指南",
     "output": "docs",
     "generator": "site",
     "structure": {
