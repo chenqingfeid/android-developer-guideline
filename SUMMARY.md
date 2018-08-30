@@ -16,78 +16,8 @@
 
 ## Kotlin
 * Features
-    * Kotlin 1.2
-        * [Multiplatform Projects](content/kotlin/features/1.2/multiplatform-projects.md)
-        * [Array Literals in Annotations](content/kotlin/features/1.2/array-literals-in-annotations.md)
-        * [Lateinit Top-Level Properties and Local Variables](content/kotlin/features/1.2/lateinit-top-level-properties-and-local-variables.md)
-        * [Checking Whether a Lateinit Var is Initialized](content/kotlin/features/1.2/checking-whether-a-lateinit-var-is-initialized.md)
-        * [Inline Functions with Default Functional Parameters](content/kotlin/features/1.2/inline-functions-with-default-functional-parameters.md)
-        * [Information From Explicit Casts is Used for Type Inference](content/kotlin/features/1.2/information-from-explicit-casts-is-used-for-type-inference.md)
-        * [Smart cast improvements](content/kotlin/features/1.2/smart-cast-improvements.md)
-        * [Shorthand for Callbale References](content/kotlin/features/1.2/shorthand-for-callable-references.md)
-        * Breaking Change
-            * [Sound Smart Casts After Try Blocks](content/kotlin/features/1.2/breaking-change/sound-smart-casts-after-try-blocks.md)
-        * Deprecation
-            * [Data Classes Overriding Copy](content/kotlin/features/1.2/deprecation/data-class-overriding-copy.md)
-            * [Nested Types in Enum Entries](content/kotlin/features/1.2/deprecation/nested-types-in-enum-entries.md)
-            * [Single Named Argument for Vararg](content/kotlin/features/1.2/deprecation/single-named-argument-for-vararg.md)
-            * [Inner Classes of Generic Classes Extending Throwable](content/kotlin/features/1.2/deprecation/inner-classes-of-generic-classes-extending-throwable.md)
-            * [Mutating Backing Field of A Read-Only Property](content/kotlin/features/1.2/deprecation/mutating-backing-field-of-a-read-only-property.md)
-        * Standard Library
-            * [windowed, chunked, zipWithNext](content/kotlin/features/1.2/stdlib/windowed-chunked-zipwithnext.md)
-            * [fill, replaceAll, shuffle/shuffled](content/kotlin/features/1.2/stdlib/fill-replaceall-shuffle-shuffled.md)
-            * [Math Operations](content/kotlin/features/1.2/stdlib/math-operations.md)
-            * [Operators and Conversions for BigInteger and BigDecimal](content/kotlin/features/1.2/stdlib/operations-and-conversions-for-biginteger-and-bigdecimal.md)
-            * [Floating Point to Bits Conversions](content/kotlin/features/1.2/stdlib/floating-point-to-bits-conversations.md)
-            * [Serializable Regex](content/kotlin/features/1.2/stdlib/serializable-regex.md)
-            * [Closeable.use calls Throwable.addSuppressed if available](content/kotlin/features/1.2/stdlib/closeable-us-calls-throwable-addsuppressed-if-available.md)
-        * JVM Backend
-            * [Constructor Calls Normalization](content/kotlin/features/1.2/jvm/constructor-calls-normalization.md)
-            * [Java-default Method Calls](content/kotlin/features/1.2/jvm/java-default-method-calls.md)
-            * Breaking Change
-                * [Consistent Behavior of x.equals(null) for Platform Types](content/kotlin/features/1.2/jvm/breaking-change/consistent-behavior-of-x-equals-null-for-platform-types.md)
-        * JavaScript Backend
-            * [TypedArrays support enabled by default](content/kotlin/features/1.2/javascript/typed-arrays-support-enabled-by-default.md)
-    * Kotlin 1.1
-        * [Coroutines](content/kotlin/features/1.1/coroutines.md)
-        * [Type Aliases](content/kotlin/features/1.1/type-aliases.md)
-        * [Bound Callable References](content/kotlin/features/1.1/bound-callable-references.md)
-        * [Sealed and Data Classes](content/kotlin/features/1.1/sealed-and-data-classes.md)
-        * [Destructuring in Lambdas](content/kotlin/features/1.1/destructuring-in-lambdas.md)
-        * [Underscores for Unused Parameters](content/kotlin/features/1.1/underscores-for-unused-parameters.md)
-        * [Underscores in Numeric Literals](content/kotlin/features/1.1/underscores-in-numeric-literals.md)
-        * [Shorter Syntax for Properties](content/kotlin/features/1.1/shorter-syntax-for-properties.md)
-        * [Inline Property Accessors](content/kotlin/features/1.1/inline-property-accessors.md)
-        * [Local Delegated Properties](content/kotlin/features/1.1/local-delegated-properties.md)
-        * [Interception of Delegated Property Binding](content/kotlin/features/1.1/interception-of-delegated-property-binding.md)
-        * [Generic Enum Value Access](content/kotlin/features/1.1/generic-enum-value-access.md)
-        * [Scope Control for Implicit Receivers in DSLs](content/kotlin/features/1.1/scope-control-for-implicit-receivers-in-dsls.md)
-        * [rem Operator](content/kotlin/features/1.1/rem-operator.md)
-        * Standard Library
-            * [String to Number Conversions](content/kotlin/features/1.1/stdlib/string-to-number-conversions.md)
-            * [onEach()](content/kotlin/features/1.1/stdlib/on-each.md)
-            * [also(), takeIf() and takeUnless()](content/kotlin/features/1.1/stdlib/also-takeif-and-takeunless.md)
-            * [groupingBy()](content/kotlin/features/1.1/stdlib/grouping-by.md)
-            * [Map.toMap() and Map.toMutableMap()](content/kotlin/features/1.1/stdlib/map-tomap-and-map-tomutablemap.md)
-            * [Map.minus(key)](content/kotlin/features/1.1/stdlib/map-minus-key.md)
-            * [minOf() and maxOf()](content/kotlin/features/1.1/stdlib/minof-and-maxof.md)
-            * [Array-like List Instantiation Functions](content/kotlin/features/1.1/stdlib/array-like-list-instantiation-functions.md)
-            * [Map.getValue()](content/kotlin/features/1.1/stdlib/map-getvalue.md)
-            * [Abstract Collections](content/kotlin/features/1.1/stdlib/abstraction-collections.md)
-            * [Array Manipulation Functions](content/kotlin/features/1.1/stdlib/array-manipulation-functions.md)
-        * JVM Backend
-            * [Java 8 Bytecode Support](content/kotlin/features/1.1/jvm/java-8-bytecode-support.md)
-            * [Java 8 Standard Library Support](content/kotlin/features/1.1/jvm/java-8-stdlib-support.md)
-            * [Parameter Names in Bytecode](content/kotlin/features/1.1/jvm/parameter-names-in-bytecode.md)
-            * [Constant Inlining](content/kotlin/features/1.1/jvm/constant-inlining.md)
-            * [Mutable Closure Variables](content/kotlin/features/1.1/jvm/mutable-closure-variables.md)
-            * [javax.script Support](content/kotlin/features/1.1/jvm/javax-script-support.md)
-            * [kotlin.reflect.full](content/kotlin/features/1.1/jvm/kotlin-reflect-full.md)
-        * JavaScript Backend
-            * [Unified Standard Library](content/kotlin/features/1.1/javascript/unified-stdlib.md)
-            * [Better Code Generation](content/kotlin/features/1.1/javascript/better-code-generation.md)
-            * [The external Modifier](content/kotlin/features/1.1/javascript/the-external-modifier.md)
-            * [Improved Import Handling](content/kotlin/features/1.1/javascript/improved-import-handling.md)
+    * [Kotlin 1.2](content/kotlin/features/1.2/README.md)
+    * [Kotlin 1.1](content/kotlin/features/1.1/README.md)
 * Kotlin/Native
     * [konan](content/kotlin/konan.md)
 

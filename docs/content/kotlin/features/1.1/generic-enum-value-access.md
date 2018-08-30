@@ -1,0 +1,2 @@
+# Generic Enum Value Access
+
