@@ -17,7 +17,7 @@
     * 原始类型和值
     * 引用类型和值
     * 运行时数据区
-        * `pc` 寄存器
+        * 寄存器
         * 虚拟机栈
         * 堆
         * 方法区
@@ -41,27 +41,6 @@
     * [Kotlin 1.1](content/kotlin/features/1.1/README.md)
 * Kotlin/Native
     * [konan](content/kotlin/konan.md)
-
-## Garbage Collection
-* [内存管理](content/garbage-collection/memory-management/README.md)
-    * [手动管理](content/garbage-collection/memory-management/manual.md)
-    * [自动管理](content/garbage-collection/memory-management/automated.md)
-* [Garbage Collection in Java](content/garbage-collection/gc-in-java/README.md)
-    * [分段和压缩](content/garbage-collection/gc-in-java/fragmenting-and-compacting.md)
-    * [代际假设](content/garbage-collection/gc-in-java/generational-hypothesis.md)
-    * [内存池](content/garbage-collection/gc-in-java/memory-pools.md)
-    * [Minor GC](content/garbage-collection/gc-in-java/minor-gc.md)
-    * [Major GC](content/garbage-collection/gc-in-java/major-gc.md)
-    * [Full GC](content/garbage-collection/gc-in-java/full-gc.md)
-* [GC 算法](content/garbage-collection/gc-algorithms/README.md)
-    * [标记可达对象](content/garbage-collection/gc-algorithms/marking-reachable-objects.md)
-    * [移除无用对象](content/garbage-collection/gc-algorithms/removing-unused-objects.md)
-* [GC 实现](content/garbage-collection/gc-implementations/README.md)
-    * [串行 GC](content/garbage-collection/gc-implementations/serial-gc.md)
-    * [并行 GC](content/garbage-collection/gc-implementations/parallel-gc.md)
-    * [并发标记清除](content/garbage-collection/gc-implementations/concurrent-mark-and-sweep.md)
-    * [G1 - Garbage First](content/garbage-collection/gc-implementations/g1.md)
-    * [Shenandoah](content/garbage-collection/gc-implementations/shenandoah.md)
 
 ## Android
 * 新特性
@@ -117,6 +96,30 @@
         * [Metadata Encryption](content/android/security/encryption/metadata.md)
     * [SELinux](content/android/security/selinux/README.md)
     * [Verified Boot](content/android/security/verified-boot/README.md)
+
+## Garbage Collection
+* [内存管理](content/garbage-collection/memory-management/README.md)
+    * [手动管理](content/garbage-collection/memory-management/manual.md)
+    * [自动管理](content/garbage-collection/memory-management/automated.md)
+* [Garbage Collection in Java](content/garbage-collection/gc-in-java/README.md)
+    * [分段和压缩](content/garbage-collection/gc-in-java/fragmenting-and-compacting.md)
+    * [代际假设](content/garbage-collection/gc-in-java/generational-hypothesis.md)
+    * [内存池](content/garbage-collection/gc-in-java/memory-pools.md)
+    * [Minor GC](content/garbage-collection/gc-in-java/minor-gc.md)
+    * [Major GC](content/garbage-collection/gc-in-java/major-gc.md)
+    * [Full GC](content/garbage-collection/gc-in-java/full-gc.md)
+* [Garbage Collection in Android](content/garbage-collection/gc-in-android/README.md)
+    * [Dalvik](content/garbage-collection/gc-in-android/dalvik.md)
+    * [ART](content/garbage-collection/gc-in-android/art.md)
+* [GC 算法](content/garbage-collection/gc-algorithms/README.md)
+    * [标记可达对象](content/garbage-collection/gc-algorithms/marking-reachable-objects.md)
+    * [移除无用对象](content/garbage-collection/gc-algorithms/removing-unused-objects.md)
+* [GC 实现](content/garbage-collection/gc-implementations/README.md)
+    * [串行 GC](content/garbage-collection/gc-implementations/serial-gc.md)
+    * [并行 GC](content/garbage-collection/gc-implementations/parallel-gc.md)
+    * [并发标记清除](content/garbage-collection/gc-implementations/concurrent-mark-and-sweep.md)
+    * [G1 - Garbage First](content/garbage-collection/gc-implementations/g1.md)
+    * [Shenandoah](content/garbage-collection/gc-implementations/shenandoah.md)
 
 ## Build Tools
 * [Android Gradle Plugin](content/build-tools/android-gradle-plugin/README.md)
