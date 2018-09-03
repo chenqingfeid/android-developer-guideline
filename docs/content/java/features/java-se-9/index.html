@@ -2601,24 +2601,178 @@
                                 
                                 <h1 id="java-se-9-&#x65B0;&#x7279;&#x6027;">Java SE 9 &#x65B0;&#x7279;&#x6027;</h1>
 <h2 id="java-platform-module-system">Java Platform Module System</h2>
+<p>&#x6A21;&#x5757;&#x5316;&#x7B97;&#x662F; Java 9 &#x7684;&#x91CD;&#x91CF;&#x7EA7;&#x7279;&#x6027;&#x4E86;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x7C7B;&#x4F3C; OSGi &#x6846;&#x67B6;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6A21;&#x5757;&#x6709;&#x4F9D;&#x8D56;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x53EF;&#x4EE5;&#x5BFC;&#x51FA;&#x516C;&#x5171; API &#x5E76;&#x9690;&#x85CF;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x3002;&#x5176;&#x4E3B;&#x8981;&#x7684;&#x76EE;&#x7684;&#x662F;&#x63D0;&#x4F9B;&#x6A21;&#x5757;&#x5316;&#x7684; JVM&#xFF0C;&#x4F7F;&#x4E4B;&#x80FD;&#x5728;&#x4F4E;&#x7AEF;&#x8BBE;&#x5907;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;JVM &#x53EA;&#x80FD;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x6240;&#x9700;&#x7684;&#x90A3;&#x4E9B;&#x6A21;&#x5757;&#x548C; API&#xFF0C;&#x5173;&#x4E8E;&#x6A21;&#x5757;&#x7684;&#x8BE6;&#x7EC6;&#x63CF;&#x8FF0;&#xFF0C;&#x53C2;&#x89C1;&#xFF1A;<a href="http://cr.openjdk.java.net/~mr/jigsaw/ea/module-summary.html" target="_blank">Module Summary</a>&#x3002;&#x4ECE; Java 9 &#x5F00;&#x59CB;&#xFF0C;&#x50CF; <code>com.sun.*</code> &#x8FD9;&#x4E9B; JVM &#x5185;&#x90E8;&#x7684; API &#x5728;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x4E0D;&#x518D;&#x53EF;&#x8BBF;&#x95EE;&#x4E86;&#x3002;</p>
+<p>&#x7C7B;&#x4F3C;&#x4E8E; <code>package-info.java</code>&#xFF0C;Module &#x7684;&#x63CF;&#x8FF0;&#x662F;&#x5728; <code>module-info.java</code> &#x4E2D;&#xFF0C;&#x5982;&#xFF1A;</p>
+<div><p class="code-filename">module-info.java</p></div>
+<pre><code class="lang-java">module io.instlab.modules.car {
+    requires io.instlab.modules.engines;
+    exports io.instlab.modules.car.handling;
+}
+</code></pre>
+<p><a href="http://openjdk.java.net/projects/jigsaw/quick-start" target="_blank">Project Jigsaw: Module System Quick-Start Guide</a></p>
 <h2 id="the-java-shell">The Java Shell</h2>
+<p>Java 9 &#x5F15;&#x5165; &#x4E86; <code>jshell</code> &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x5141;&#x8BB8;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x5C06;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x7C7B;&#x91CC;&#x9762;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x5176;&#x5B83;&#x57FA;&#x4E8E; JVM &#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x5982; Groovy&#xFF0C;Scala&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x63A8;&#x51FA; <code>jshell</code>&#xFF0C;&#x5176;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x5728; Java &#x8BED;&#x8A00;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x5B83;&#x8BED;&#x8A00;&#x6765;&#x8BF4;&#xFF0C;&#x4E0A;&#x624B;&#x7684;&#x95E8;&#x69DB;&#x7565;&#x9AD8;&#xFF0C;&#x50CF; <code>python</code> &#x76F4;&#x63A5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x5C31;&#x80FD;&#x5B8C;&#x6210; <em>hello world</em>&#xFF0C;&#x800C; Java &#x8FD8;&#x9700;&#x8981;&#x6253;&#x5F00;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x518D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x7F16;&#x8BD1;&#x5B8C;&#x624D;&#x80FD;&#x8FD0;&#x884C;&#xFF0C;&#x5B9E;&#x5728;&#x662F;&#x592A;&#x70E6;&#x7410;&#x4E86;&#xFF0C;&#x5B8C;&#x5168;&#x4E0D;&#x5229;&#x4E8E; Java &#x5411;&#x6559;&#x5B66;&#x8BED;&#x8A00;&#x7684;&#x8F6C;&#x5316;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x547D;&#x4EE4;&#x884C;&#x4E4B;&#x5916;&#xFF0C;<code>jshell</code> &#x8FD8;&#x63D0;&#x4F9B;&#x4E86; API&#xFF0C;&#x5141;&#x8BB8;&#x5176;&#x5B83;&#x5DE5;&#x5177;&#x96C6;&#x6210; <code>jshell</code> &#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="multi-release-jar-files">Multi-Release JAR Files</h2>
+<p>&#x5728; Java 9 &#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x6709;&#x8DA3;&#x7684;&#x7279;&#x6027;&#x662F;&#x652F;&#x6301;&#x540C;&#x4E00;&#x4E2A; jar &#x9488;&#x5BF9;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684; Java &#x7248;&#x672C;&#x8FDB;&#x884C;&#x53D1;&#x5E03;&#xFF0C;&#x901A;&#x8FC7;&#x5728; <code>MANIFEST.MF</code> &#x6587;&#x4EF6;&#x4E2D;&#x8BBE;&#x7F6E; <code>Multi-Release: true</code>&#xFF0C;&#x8BE5; jar &#x6587;&#x4EF6;&#x5C31;&#x53D8;&#x6210;&#x4E86; Multi-Release JAR (MRJAR)&#xFF0C;Java &#x8FD0;&#x884C;&#x65F6;&#x5C06;&#x6839;&#x636E;&#x5F53;&#x524D;&#x7684;&#x4E3B;&#x7248;&#x672C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684; jar &#x7248;&#x672C;&#x3002;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>jar root
+  - A.class
+  - B.class
+  - C.class
+  - D.class
+  - META-INF
+    - versions
+      - 9
+        - A.class
+        - B.class
+      - 10
+        - A.class
+</code></pre><ul>
+<li>&#x5F53; JDK &lt; 9 &#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x6839;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x7C7B;&#x5BF9; Java &#x8FD0;&#x884C;&#x65F6;&#x662F;&#x53EF;&#x89C1;&#x7684;</li>
+<li>&#x5728; JDK 9 &#x4E0A;&#xFF0C;<code>A.class</code> &#x548C; <code>B.class</code> &#x5C06;&#x4ECE; <code>root/META-INF/versions/9/</code> &#x4E2D;&#x52A0;&#x8F7D;</li>
+<li>&#x5728; JDK 10 &#x4E0A;&#xFF0C; <code>A.class</code> &#x5C06;&#x4ECE; <code>root/META-INF/versions/10/</code> &#x4E2D;&#x52A0;&#x8F7D;</li>
+</ul>
+<p>Multi-Release Jar &#x4F7F;&#x5F97;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x7EF4;&#x62A4;&#x9488;&#x5BF9;&#x4E0D;&#x540C; Java &#x5E73;&#x53F0;&#x7684;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x800C;&#x4E14;&#x5206;&#x53D1;&#x4EE3;&#x7801;&#x53EA;&#x9700;&#x8981;&#x4E00;&#x4E2A; jar&#xFF0C;&#x4E00;&#x4E2A;&#x7248;&#x672C;&#xFF08;Maven artifact &#x7248;&#x672C;&#xFF09;&#x5C31;&#x591F;&#x4E86;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x81EA;&#x7136;&#x514D;&#x4E0D;&#x4E86;&#x4FEE;&#x6539;&#x5904;&#x7406; JAR &#x7684; API&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;<code>JarFile</code> &#x548C; <code>URLClassLoader</code>&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x8BB8;&#x591A; JDK &#x5DE5;&#x5177;&#x4E3A;&#x4E86;&#x9002;&#x5E94;&#x65B0;&#x7684;&#x683C;&#x5F0F;&#x4E5F;&#x88AB;&#x6539;&#x9020;&#x8FC7;&#xFF0C;&#x5982;&#xFF1A;<code>java</code>&#xFF0C;<code>javac</code>&#xFF0C;<code>jar</code>&#x3002;</p>
+<h2 id="multi-resolution-images">Multi-Resolution Images</h2>
+<p>JDK 9 &#x4E2D;&#x65B0;&#x589E;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x63A5;&#x53E3; <a href="http://download.java.net/java/jdk9/docs/api/java/awt/image/MultiResolutionImage.html" target="_blank">MultiResolutionImage</a> &#x53CA;&#x5176;&#x57FA;&#x7840;&#x5B9E;&#x73B0;&#x7C7B; <a href="http://download.java.net/java/jdk9/docs/api/java/awt/image/BaseMultiResolutionImage.html" target="_blank">BaseMultiResolutionImage</a>&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5C01;&#x88C5;&#x51E0;&#x79CD;&#x4E0D;&#x540C;&#x5C3A;&#x5BF8;&#x7684;&#x56FE;&#x50CF;&#x53D8;&#x4F53;&#xFF0C;&#x5F53;&#x7ED9;&#x5B9A;&#x4E86;&#x5BBD;&#x9AD8;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x9009;&#x62E9;&#x6700;&#x597D;&#x7684;&#x56FE;&#x50CF;&#x53D8;&#x4F53;&#x3002;</p>
+<h2 id="reactive-stream-flow-api">Reactive Stream Flow API</h2>
+<p>&#x5728; JDK 9 &#x4E2D;&#x5F15;&#x5165;&#x4E86; <a href="https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html" target="_blank">java.util.concurrent.Flow</a> &#x7C7B;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957; Reactive Stream &#x76F8;&#x5173;&#x7684;&#x6807;&#x51C6;&#x7684;&#x63A5;&#x53E3;&#x96C6;&#xFF0C;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x901A;&#x8FC7;&#x53D1;&#x5E03;-&#x8BA2;&#x9605;&#x673A;&#x5236;&#x8BA9;&#x6570;&#x636E;&#x6D41;&#x7684;&#x751F;&#x4EA7;&#x8005;&#x4E0E;&#x6D88;&#x8D39;&#x8005;&#x4E4B;&#x524D;&#x8FDB;&#x884C;&#x5F02;&#x6B65;&#x901A;&#x4FE1;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; <a href="">rxjava</a></p>
 <h2 id="make-g1-the-default-garbage-collector">Make G1 the Default Garbage Collector</h2>
+<p>&#x5728; Java 9 &#x4E4B;&#x524D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x662F;&#x5E76;&#x884C; GC&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x9ED8;&#x8BA4;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x662F;&#x4E32;&#x884C; GC&#xFF0C;&#x5728; Java 9 &#x4E2D;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x9ED8;&#x8BA4; &#x7684; GC &#x6539;&#x4E3A;&#x4ECE; Java 7 &#x5F00;&#x59CB;&#x5F15;&#x5165;&#x7684; G1 &#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x3002;</p>
+<p>G1 &#x662F;&#x4E00;&#x4E2A;&#x5E76;&#x884C;&#x7684;&#x3001;&#x4F4E;&#x6682;&#x505C;&#x7684;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#xFF0C;&#x5BF9;&#x4E8E;&#x5177;&#x6709;&#x8F83;&#x5927;&#x5806;&#x7A7A;&#x95F4;&#x7684;&#x591A;&#x6838;&#x673A;&#x5668;&#x7279;&#x522B;&#x9002;&#x7528;&#x3002;&#x5173;&#x4E8E; G1 &#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x7684;&#x6982;&#x8FF0;&#xFF0C;&#x53C2;&#x89C1;&#xFF1A;<a href="http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#xFF08;CMS&#xFF09;&#x56DE;&#x6536;&#x5668;&#x5DF2;&#x7ECF;&#x88AB;&#x5E9F;&#x5F03;&#x3002;" target="_blank">http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x5E76;&#x53D1;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#xFF08;CMS&#xFF09;&#x56DE;&#x6536;&#x5668;&#x5DF2;&#x7ECF;&#x88AB;&#x5E9F;&#x5F03;&#x3002;</a></p>
+<h2 id="compact-strings">Compact Strings</h2>
+<p>Java 9 &#x5BF9; <code>String</code> &#x7C7B;&#x4F5C;&#x4E86;&#x5185;&#x90E8;&#x4F18;&#x5316;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x3002;&#x56E0;&#x4E3A;&#x5927;&#x591A;&#x6570;&#x5B57;&#x7B26;&#x4E32;&#x5E76;&#x4E0D;&#x9700;&#x8981; 2 &#x4E2A;&#x5B57;&#x8282;&#x8868;&#x793A;&#x7684;&#x5B57;&#x7B26;&#x3002;&#x5B9E;&#x73B0;&#x7684;&#x539F;&#x7406;&#x662F;&#x5728;&#x5C06;&#x5B57;&#x7B26;&#x6570;&#x7EC4;&#x6539;&#x4E3A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x5728;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4E2D;&#x589E;&#x4E2A;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x7684;&#x7F16;&#x7801;&#xFF1A;</p>
+<ul>
+<li>Latin-1 &#x5360;&#x7528; 1 &#x4E2A;&#x5B57;&#x8282;</li>
+<li>UTF-16 &#x5360;&#x7528; 2 &#x4E2A;&#x5B57;&#x8282;</li>
+</ul>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x6839;&#x636E;&#x8981;&#x5B58;&#x50A8;&#x7684;&#x5185;&#x5BB9;&#x786E;&#x5B9A;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x7684;&#x7F16;&#x7801;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x66F4;&#x6539;&#x662F;&#x5185;&#x90E8;&#x7684;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD; <code>String</code> &#x5BF9;&#x5916;&#x7684; API &#x4EE5;&#x53CA;&#x5176;&#x76F8;&#x5173;&#x7684;&#x7C7B;&#xFF0C;&#x5982; <code>StringBuilder</code>&#x3001;<code>StringBuffer</code> &#x7B49;&#x3002;&#x82E5;&#x8981;&#x7981;&#x7528;&#x5B57;&#x7B26;&#x4E32;&#x538B;&#x7F29;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>-XX:-CompactStrings</code>  &#x9009;&#x9879;&#x3002;</p>
+<h2 id="stack-walking-api">Stack-Walking API</h2>
+<p>&#x5728; Java 9 &#x4E4B;&#x524D;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7; <code>sun.reflect.Reflection</code> &#x904D;&#x5386;&#x7EBF;&#x7A0B;&#x6808;&#x5E27;&#xFF0C;&#x7279;&#x522B;&#x662F; <code>sun.reflect.Reflection::getCallerClass()</code>&#x3002;&#x6709;&#x4E00;&#x4E9B;&#x5E93;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x88AB;&#x5E9F;&#x5F03;&#x6389;&#x4E86;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F; JDK 9 &#x63D0;&#x4F9B;&#x7684;&#x6807;&#x51C6;&#x7684; API -- <code>StackWalker</code> &#x7C7B;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;&#x5EF6;&#x8FDF;&#x8BBF;&#x95EE;&#x6808;&#x5E27;&#x6765;&#x63D0;&#x9AD8;&#x6027;&#x80FD;&#x3002;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A; API &#x6765;&#x904D;&#x5386;&#x8C03;&#x7528;&#x6808;&#xFF0C;&#x5E76;&#x5728;&#x7C7B;&#x4E2D;&#x8FC7;&#x6EE4;&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#xFF1A;</p>
+<ul>
+<li><code>public &lt;T&gt; T walk(Function&lt;Stream&lt;StackFrame&gt;, T&gt; function);</code> - &#x4ECE;&#x9876;&#x90E8;&#x5E27;&#x5F00;&#x59CB;&#x5BF9;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6808;&#x5E27;&#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF0C;&#x5E76;&#x5BF9;&#x6808;&#x5E27;&#x5E94;&#x7528;&#x6307;&#x5B9A;&#x7684; <code>Function</code>&#x3002;</li>
+<li><code>public Class&lt;?&gt; getCallerClass();</code> - &#x8FD4;&#x56DE;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;</li>
+</ul>
+<p><code>StackWalker</code>  &#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x5B9E;&#x4F8B;&#x904D;&#x5386;&#x7EBF;&#x7A0B;&#x6808;&#x5E27;&#x3002;</p>
 <h2 id="compiler-control">Compiler Control</h2>
 <h2 id="segmented-code-cache">Segmented Code Cache</h2>
 <h2 id="dynamic-linking-of-language-defined-object-models">Dynamic Linking of Language-Defined Object Models</h2>
 <h2 id="version-string-scheme">Version-String Scheme</h2>
-<p>&#x65B0;&#x7684;&#x7248;&#x672C;&#x53F7;&#x683C;&#x5F0F;&#xFF1A;<code>$MAJOR.$MINOR.$SECURITY.$PATCH</code></p>
-<h2 id="validate-jvm-command-line-flag-arguments">Validate JVM Command-Line Flag Arguments</h2>
+<p>&#x5728;&#x8FC7;&#x53BB;&#x7684; 20 &#x591A;&#x5E74;&#x91CC;&#xFF0C;Java &#x7684;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x4E00;&#x76F4;&#x6BD4;&#x8F83;&#x6DF7;&#x4E71;&#x3002; &#x524D;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x7248;&#x672C;&#x662F; JDK 1.0 &#x548C; JDK 1.1&#x3002; &#x4ECE; 1.2 &#x5230; 1.5&#xFF0C;&#x5E73;&#x53F0;&#x88AB;&#x79F0;&#x4E3A; J2SE (&#x6807;&#x51C6;&#x7248;&#x672C;)&#x3002; &#x4ECE; 1.5 &#x5F00;&#x59CB;&#xFF0C;&#x7248;&#x672C;&#x63A7;&#x5236;&#x53D8;&#x6210;&#x4E86; Java 5&#xFF0C;&#x7136;&#x540E;&#x662F; Java 6&#xFF0C;&#x7B49;&#x7B49;&#x3002; &#x7136;&#x800C;&#xFF0C;&#x5F53;&#x4F60;&#x4F7F;&#x7528;&#x5DF2;&#x5B89;&#x88C5;&#x7684; Java 8 &#x8FD0;&#x884C; Java &#x7248;&#x672C;&#x65F6;&#xFF0C;&#x8F93;&#x51FA;&#x4ECD;&#x7136;&#x662F; 1.8 &#x800C;&#x4E0D;&#x662F; 8&#x3002; &#x7532;&#x9AA8;&#x6587;&#x6536;&#x8D2D; Sun &#x540E;&#x63A8;&#x51FA;&#x7684;&#x5F53;&#x524D;&#x7248;&#x672C;&#x7248;&#x672C;&#x7248;&#x672C;&#x65B9;&#x6848;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x5BF9;&#x4E8E; Limited Updates Release&#xFF08;&#x6CA1;&#x6709;&#x91CD;&#x8981;&#x7684;&#x5B89;&#x5168;&#x4FEE;&#x590D;&#xFF09;&#xFF0C;&#x7248;&#x672C;&#x53F7;&#x662F; 20 &#x7684;&#x500D;&#x6570;</li>
+<li>&#x5BF9;&#x4E8E;&#x91CD;&#x8981;&#x8865;&#x4E01;&#x66F4;&#x65B0;&#xFF08;&#x4FEE;&#x590D;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#xFF09;&#xFF0C;&#x7248;&#x672C;&#x53F7;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x5148;&#x524D;&#x7684; Limited Updates Release &#x57FA;&#x7840;&#x4E0A;&#x4EE5; 5 &#x7684;&#x500D;&#x6570;&#x9012;&#x589E;&#xFF0C;&#x5F53;&#x7248;&#x672C;&#x53F7;&#x4E0D;&#x4E3A;&#x5947;&#x6570;&#x7684;&#x8BDD;&#xFF0C;&#x518D;&#x52A0; 1 &#x51D1;&#x6210;&#x5947;&#x6570;</li>
+</ul>
+<h3 id="version-numbers">Version Numbers</h3>
+<p>&#x4ECE; Java 9 &#x5F00;&#x59CB;&#xFF0C;&#x7248;&#x672C;&#x53F7;&#x7684;&#x683C;&#x5F0F;&#x6539;&#x4E3A;&#xFF1A;<code>$MAJOR.$MINOR.$SECURITY.$PATCH</code></p>
+<ul>
+<li><code>MAJOR</code> - &#x4E3B;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5BF9;&#x4E8E; JDK 9 &#x6765;&#x8BF4;&#xFF0C; <code>MAJOR=9</code></li>
+<li><code>MINOR</code> - &#x6B21;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x968F;&#x7740; bug &#x4FEE;&#x590D;&#x53CA;&#x6807;&#x51C6; API &#x7684;&#x589E;&#x5F3A;&#x7684;&#x53D1;&#x5E03;&#x800C;&#x9012;&#x589E;</li>
+<li><code>SECURITY</code> - &#x5B89;&#x5168;&#x7EA7;&#x522B;&#xFF0C;&#x968F;&#x7740;&#x91CD;&#x8981;&#x5B89;&#x5168;&#x4FEE;&#x590D;&#x7684;&#x53D1;&#x5E03;&#x800C;&#x9012;&#x589E;&#xFF0C;&#x5F53; <code>MINOR</code> &#x9012;&#x589E;&#x65F6;&#xFF0C;<code>SECURITY</code> &#x4F1A;&#x91CD;&#x7F6E;&#x4E3A; <code>0</code></li>
+<li><code>PATCH</code> - &#x975E;&#x5B89;&#x5168;&#x6027;&#x4FEE;&#x590D;&#x7684;&#x8865;&#x4E01;&#x7248;&#x672C;</li>
+</ul>
+<h3 id="version-strings">Version Strings</h3>
+<p>&#x7248;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x7531; <code>Version Number</code>  &#x52A0;&#x4E0A;&#x4E00;&#x4E9B;&#x5176;&#x5B83;&#x4FE1;&#x606F;&#xFF08;&#x5982;&#xFF1A;early-access release identifier &#x6216; build number&#xFF09;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li><code>$VNUM(-$PRE)?\+$BUILD(-$OPT)?</code></li>
+<li><code>$VNUM-$PRE(-$OPT)?</code></li>
+<li><code>$VNUM(+-$OPT)?</code></li>
+</ul>
+<p>&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>PRE</code> - &#x9884;&#x53D1;&#x5E03;&#x6807;&#x8BC6;</li>
+<li><code>BUILD</code> - build number</li>
+<li><code>OPT</code> - &#x5176;&#x5B83;&#x53EF;&#x9009;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#xFF1A;&#x65F6;&#x95F4;&#x6233;</li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x662F;&#x73B0;&#x6709;&#x548C;&#x5373;&#x5C06;&#x63A8;&#x51FA;&#x7684;&#x5BF9; JDK 9 &#x8FDB;&#x884C;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7684;&#x65B9;&#x6848;&#x5BF9;&#x6BD4;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>Release Type</th>
+<th>long (Existing)</th>
+<th>short (Existing)</th>
+<th>long (New)</th>
+<th>short (New)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Early Access</td>
+<td>1.9.0-ea-b19</td>
+<td>9-ea</td>
+<td>9-ea+19</td>
+<td>9-ea</td>
+</tr>
+<tr>
+<td>Major</td>
+<td>1.9.0-b100</td>
+<td>9</td>
+<td>9+100</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Security #1</td>
+<td>1.9.0_5-b20</td>
+<td>9u5</td>
+<td>9.0.1+20</td>
+<td>9.0.1</td>
+</tr>
+<tr>
+<td>Security #2</td>
+<td>1.9.0_11-b12</td>
+<td>9u11</td>
+<td>9.0.2+12</td>
+<td>9.0.2</td>
+</tr>
+<tr>
+<td>Minor #1</td>
+<td>1.9.0_20-b62</td>
+<td>9u20</td>
+<td>9.1.2+62</td>
+<td>9.1.2</td>
+</tr>
+<tr>
+<td>Security #3</td>
+<td>1.9.0_25-b15</td>
+<td>9u25</td>
+<td>9.1.3+15</td>
+<td>9.1.3</td>
+</tr>
+<tr>
+<td>Security #4</td>
+<td>1.9.0_31-b08</td>
+<td>9u31</td>
+<td>9.1.4+8</td>
+<td>9.1.4</td>
+</tr>
+<tr>
+<td>Minor #2</td>
+<td>1.9.0_40-b45</td>
+<td>9u40</td>
+<td>9.2.4+45</td>
+<td>9.2.4</td>
+</tr>
+</tbody>
+</table>
 <h2 id="remove-the-jvm-ti-hprof-agent">Remove the JVM TI hprof Agent</h2>
+<p>&#x5728; Java 9 &#x4E4B;&#x524D;&#xFF0C;prof JVM native agent &#x88AB;&#x7528;&#x6765;&#x8F6C;&#x50A8;&#x5806;&#x3001;&#x8FFD;&#x8E2A; CPU&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x79FB;&#x9664;&#x5B83;&#x662F;&#x56E0;&#x4E3A;&#x6709;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x66FF;&#x4EE3;&#x65B9;&#x6848; -- <a href="https://docs.oracle.com/javase/7/docs/technotes/tools/share/jmap.html" target="_blank">jmap</a> &#x548C; <a href="https://visualvm.github.io/" target="_blank">Java VisualVM</a>&#x3002;</p>
 <h2 id="remove-the-jhat-tool">Remove the jhat Tool</h2>
+<p><code>jhat</code> &#x5DE5;&#x5177;&#x662F;&#x7528;&#x6765;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x67E5;&#x770B;&#x5806;&#x7684; dump &#x4FE1;&#x606F;&#xFF0C;&#x4E4B;&#x6240;&#x4EE5;&#x88AB;&#x79FB;&#x9664;&#x4E5F;&#x662F;&#x56E0;&#x4E3A;&#x6709;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#x3002;</p>
 <h2 id="compile-for-older-platform-versions">Compile for Older Platform Versions</h2>
+<p>&#x5728; Java 9 &#x4E4B;&#x524D;&#x662F;&#x4F7F;&#x7528; <code>-source</code> &#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x8BED;&#x8A00;&#x89C4;&#x8303;&#xFF0C;&#x7528; <code>-target</code> &#x9009;&#x9879;&#x751F;&#x6210;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x7684;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;&#x7531;&#x4E8E;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x628A;&#x5DF2;&#x7F16;&#x8BD1;&#x7684;&#x7C7B;&#x94FE;&#x63A5;&#x5230;&#x5F53;&#x524D; JDK &#x7248;&#x672C;&#x7684;&#x5E73;&#x53F0; API&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x9664;&#x975E;&#x91CD;&#x8F7D; bootclasspath&#xFF09;&#x3002;&#x5728; Java 9 &#x4E2D;&#xFF0C;&#x4E3A;&#x80FD;&#x80FD;&#x591F;&#x7F16;&#x8BD1;&#x6210;&#x65E7;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x7531; <code>--release</code> &#x66FF;&#x4EE3;&#x3002;</p>
+<p><code>--release</code> &#x7B49;&#x4EF7;&#x4E8E; <code>-source N -target N -bootclasspath &lt;bootclasspath-from-N&gt;</code></p>
+<p>JDK 9 &#x901A;&#x8FC7;&#x7EF4;&#x62A4;&#x65E7;&#x7248;&#x672C;&#x7684; API &#x7B7E;&#x540D;&#x6570;&#x636E;&#x6765;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x7B7E;&#x540D;&#x6570;&#x636E;&#x4F4D;&#x4E8E;&#xFF1A;<code>$JDK_HOME/lib/ct.sym</code></p>
+<h2 id="applet-api-deprecated">Applet API deprecated</h2>
+<p>&#x7531;&#x4E8E; web &#x6D4F;&#x89C8;&#x5668;&#x5BF9; Java &#x63D2;&#x4EF6;&#x7684;&#x652F;&#x6301;&#x8D8A;&#x6765;&#x8D8A;&#x5C11;&#xFF0C;Applet API &#x5728; Java 9 &#x4E2D;&#x88AB;&#x5E9F;&#x5F03;&#xFF0C;&#x4F46;&#x4E0D;&#x786E;&#x5B9A;&#x5C06;&#x6765;&#x662F;&#x5426;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x3002;</p>
 <h2 id="java-&#x8BED;&#x8A00;&#x7684;&#x4E00;&#x4E9B;&#x5C0F;&#x53D8;&#x5316;">Java &#x8BED;&#x8A00;&#x7684;&#x4E00;&#x4E9B;&#x5C0F;&#x53D8;&#x5316;</h2>
 <ul>
 <li>&#x5141;&#x8BB8;&#x5728;&#x79C1;&#x6709;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x4E0A;&#x4F7F;&#x7528; <code>@SafeVargs</code>&#x3002; <code>@SafeVarargs</code> &#x6CE8;&#x91CA;&#x53EA;&#x80FD;&#x5E94;&#x7528;&#x4E8E;&#x4E0D;&#x80FD;&#x91CD;&#x5199;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5305;&#x62EC;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x548C;&#x6700;&#x7EC8;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002; &#x79C1;&#x6709;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x662F; <code>@SafeVargs</code> &#x53EF;&#x4EE5;&#x5BB9;&#x7EB3;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x7528;&#x4F8B;&#x3002;</li>
 <li>Java SE 7 &#x4E2D;&#x7684; <code>try-with-resources</code> &#x8BED;&#x53E5;&#x8981;&#x6C42;&#x5BF9;&#x8BED;&#x53E5;&#x7BA1;&#x7406;&#x7684;&#x6BCF;&#x4E2A;&#x8D44;&#x6E90;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x800C;&#x5728; Java SE 9 &#x4E2D; &#x5141;&#x8BB8;&#x6709;&#x6548;&#x7684; final &#x53D8;&#x91CF;&#x4F5C;&#x4E3A;&#x8D44;&#x6E90;&#x5728; <code>try-with-resources</code> &#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</li>
 <li>&#x5982;&#x679C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x662F;&#x53EF;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x5219;&#x5141;&#x8BB8;&#x5E26;&#x6709;&#x533F;&#x540D;&#x7C7B;&#x7684; <code>&lt;&gt;</code> &#x64CD;&#x4F5C;&#x7B26;&#x3002; &#x7531;&#x4E8E;&#x63A8;&#x5BFC;&#x7C7B;&#x578B;&#x4F7F;&#x7528;&#x4E86;&#x5177;&#x6709; <code>&lt;&gt;</code> &#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x533F;&#x540D;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53EF;&#x80FD;&#x4E0D;&#x5C5E;&#x4E8E;&#x7531;&#x7B7E;&#x540D;&#x5C5E;&#x6027;&#x652F;&#x6301;&#x7684;&#x4E00;&#x7EC4;&#x7C7B;&#x578B;&#xFF0C;&#x6240;&#x4EE5;  Java SE 7 &#x4E2D;&#x7981;&#x6B62;&#x4F7F;&#x7528;&#x5E26;&#x533F;&#x540D;&#x7C7B;&#x7684; <code>&lt;&gt;</code> &#x64CD;&#x4F5C;&#x7B26;&#x3002;</li>
-<li>&#x5B8C;&#x6210;&#x4E86;&#x4ECE; Java SE 8 &#x5F00;&#x59CB;&#x7684;&#x4ECE;&#x6CD5;&#x5F8B;&#x6807;&#x8BC6;&#x7B26;&#x540D;&#x79F0;&#x96C6;&#x5408;&#x4E2D;&#x5220;&#x9664;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</li>
-<li>&#x652F;&#x6301;&#x79C1;&#x6709;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x63A5;&#x53E3;&#x7684;&#x975E;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x80FD;&#x591F;&#x5728;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x7981;&#x6B62; <code>_</code> &#x4F5C;&#x4E3A;&#x6807;&#x8BC6;&#x7B26;</li>
+<li>&#x63A5;&#x53E3;&#x652F;&#x6301; <code>private</code> &#x65B9;&#x6CD5;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x63A5;&#x53E3;&#x7684;&#x975E;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x80FD;&#x591F;&#x5728;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4EE3;&#x7801;&#x3002;</li>
 </ul>
 
                                 
@@ -2663,7 +2817,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java SE 9","level":"1.2","depth":1,"next":{"title":"Java SE 8","level":"1.3","depth":1,"path":"content/java/features/java-se-8/README.md","ref":"content/java/features/java-se-8/README.md","articles":[]},"previous":{"title":"Java SE 10","level":"1.1","depth":1,"path":"content/java/features/java-se-10/README.md","ref":"content/java/features/java-se-10/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","splitter","codeblock-filename","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"codeblock-filename":{},"theme-comscore":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android Developer Guideline","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.1.0","description":"Android 开发者指南"},"file":{"path":"content/java/features/java-se-9/README.md","mtime":"2018-08-31T08:37:16.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-31T19:15:16.865Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java SE 9","level":"1.2","depth":1,"next":{"title":"Java SE 8","level":"1.3","depth":1,"path":"content/java/features/java-se-8/README.md","ref":"content/java/features/java-se-8/README.md","articles":[]},"previous":{"title":"Java SE 10","level":"1.1","depth":1,"path":"content/java/features/java-se-10/README.md","ref":"content/java/features/java-se-10/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","splitter","codeblock-filename","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"codeblock-filename":{},"theme-comscore":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android Developer Guideline","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.1.0","description":"Android 开发者指南"},"file":{"path":"content/java/features/java-se-9/README.md","mtime":"2018-09-03T06:44:50.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T07:12:28.488Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>

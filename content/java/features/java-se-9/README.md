@@ -2,17 +2,107 @@
 
 ## Java Platform Module System
 
+模块化算是 Java 9 的重量级特性了，它提供了类似 OSGi 框架的功能，模块有依赖的概念，可以导出公共 API 并隐藏实现细节。其主要的目的是提供模块化的 JVM，使之能在低端设备上运行，JVM 只能运行应用所需的那些模块和 API，关于模块的详细描述，参见：[Module Summary](http://cr.openjdk.java.net/~mr/jigsaw/ea/module-summary.html)。从 Java 9 开始，像 `com.sun.*` 这些 JVM 内部的 API 在应用程序中不再可访问了。
+
+类似于 `package-info.java`，Module 的描述是在 `module-info.java` 中，如：
+
+```java:module-info.java
+module io.instlab.modules.car {
+    requires io.instlab.modules.engines;
+    exports io.instlab.modules.car.handling;
+}
+```
+
+
+
+[Project Jigsaw: Module System Quick-Start Guide](http://openjdk.java.net/projects/jigsaw/quick-start)
+
 
 
 ## The Java Shell
+
+Java 9 引入 了 `jshell` 命令行工具，允许在命令行中直接运行代码片段，而无需将代码放在类里面，类似于其它基于 JVM 的语言，如 Groovy，Scala。之所以推出 `jshell`，其主要原因在 Java 语言相对于其它语言来说，上手的门槛略高，像 `python` 直接在命令行下就能完成 *hello world*，而 Java 还需要打开编辑器，再声明一个类，然后编译完才能运行，实在是太烦琐了，完全不利于 Java 向教学语言的转化。
+
+除了命令行之外，`jshell` 还提供了 API，允许其它工具集成 `jshell` 的功能。
+
+
+
+## Multi-Release JAR Files
+
+在 Java 9 中引入了一个比较有趣的特性是支持同一个 jar 针对多个不同的 Java 版本进行发布，通过在 `MANIFEST.MF` 文件中设置 `Multi-Release: true`，该 jar 文件就变成了 Multi-Release JAR (MRJAR)，Java 运行时将根据当前的主版本选择合适的 jar 版本。该文件的结构如下：
+
+```
+jar root
+  - A.class
+  - B.class
+  - C.class
+  - D.class
+  - META-INF
+    - versions
+      - 9
+        - A.class
+        - B.class
+      - 10
+        - A.class
+```
+
+- 当 JDK < 9 时，只有根目录中的类对 Java 运行时是可见的
+- 在 JDK 9 上，`A.class` 和 `B.class` 将从 `root/META-INF/versions/9/` 中加载
+- 在 JDK 10 上， `A.class` 将从 `root/META-INF/versions/10/` 中加载
+
+Multi-Release Jar 使得项目可以维护针对不同 Java 平台的不同版本的代码，而且分发代码只需要一个 jar，一个版本（Maven artifact 版本）就够了。
+
+为了实现这个特性，自然免不了修改处理 JAR 的 API，比如：`JarFile` 和 `URLClassLoader`。此外，许多 JDK 工具为了适应新的格式也被改造过，如：`java`，`javac`，`jar`。
+
+
+
+## Multi-Resolution Images
+
+JDK 9 中新增了一个新的接口 [MultiResolutionImage](http://download.java.net/java/jdk9/docs/api/java/awt/image/MultiResolutionImage.html) 及其基础实现类 [BaseMultiResolutionImage](http://download.java.net/java/jdk9/docs/api/java/awt/image/BaseMultiResolutionImage.html)，它可以封装几种不同尺寸的图像变体，当给定了宽高，它可以用于选择最好的图像变体。
+
+
+
+## Reactive Stream Flow API
+
+在 JDK 9 中引入了 [java.util.concurrent.Flow](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html) 类，它提供了一套 Reactive Stream 相关的标准的接口集，这些接口通过发布-订阅机制让数据流的生产者与消费者之前进行异步通信，类似于 [rxjava]()
 
 
 
 ## Make G1 the Default Garbage Collector
 
+在 Java 9 之前，服务器上的默认垃圾回收器是并行 GC，客户端的默认垃圾回收器是串行 GC，在 Java 9 中，服务器的默认 的 GC 改为从 Java 7 开始引入的 G1 垃圾回收器。
+
+G1 是一个并行的、低暂停的垃圾回收器，对于具有较大堆空间的多核机器特别适用。关于 G1 垃圾回收器的概述，参见：http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html。除此之外，并发标记清除（CMS）回收器已经被废弃。
+
+
+
+## Compact Strings
+
+Java 9 对 `String` 类作了内部优化，以减少内存消耗。因为大多数字符串并不需要 2 个字节表示的字符。实现的原理是在将字符数组改为字节数组，并在字节数组中增个一个字节用于表示字节数组的编码：
+
+- Latin-1 占用 1 个字节
+- UTF-16 占用 2 个字节
+
+字符串根据要存储的内容确定字节数组的编码。
+
+这个更改是内部的，不影响 `String` 对外的 API 以及其相关的类，如 `StringBuilder`、`StringBuffer` 等。若要禁用字符串压缩，可以使用 `-XX:-CompactStrings`  选项。
+
+
+
+## Stack-Walking API
+
+在 Java 9 之前，只能通过 `sun.reflect.Reflection` 遍历线程栈帧，特别是 `sun.reflect.Reflection::getCallerClass()`。有一些库依赖于这个方法，但是已经被废弃掉了，取而代之的是 JDK 9 提供的标准的 API -- `StackWalker` 类，它通过延迟访问栈帧来提高性能。应用程序可以通过这个 API 来遍历调用栈，并在类中过滤。这个类中，有两个方法值得注意：
+
+- `public <T> T walk(Function<Stream<StackFrame>, T> function);` - 从顶部帧开始对当前线程栈帧进行遍历，并对栈帧应用指定的 `Function`。
+- `public Class<?> getCallerClass();` - 返回调用此方法的类
+
+`StackWalker`  是线程安全的，它可以在多线程环境中使用同一实例遍历线程栈帧。
+
 
 
 ## Compiler Control
+
+
 
 
 
@@ -26,33 +116,84 @@
 
 ## Version-String Scheme
 
-新的版本号格式：`$MAJOR.$MINOR.$SECURITY.$PATCH`
+在过去的 20 多年里，Java 的版本管理一直比较混乱。 前两个主要版本是 JDK 1.0 和 JDK 1.1。 从 1.2 到 1.5，平台被称为 J2SE (标准版本)。 从 1.5 开始，版本控制变成了 Java 5，然后是 Java 6，等等。 然而，当你使用已安装的 Java 8 运行 Java 版本时，输出仍然是 1.8 而不是 8。 甲骨文收购 Sun 后推出的当前版本版本版本方案如下：
 
+- 对于 Limited Updates Release（没有重要的安全修复），版本号是 20 的倍数
+- 对于重要补丁更新（修复安全漏洞），版本号的计算方法是在先前的 Limited Updates Release 基础上以 5 的倍数递增，当版本号不为奇数的话，再加 1 凑成奇数
 
+### Version Numbers
 
-## Validate JVM Command-Line Flag Arguments
+从 Java 9 开始，版本号的格式改为：`$MAJOR.$MINOR.$SECURITY.$PATCH`
+
+ - `MAJOR` - 主版本号，对于 JDK 9 来说， `MAJOR=9`
+ - `MINOR` - 次版本号，随着 bug 修复及标准 API 的增强的发布而递增
+ - `SECURITY` - 安全级别，随着重要安全修复的发布而递增，当 `MINOR` 递增时，`SECURITY` 会重置为 `0`
+ - `PATCH` - 非安全性修复的补丁版本
+
+### Version Strings
+
+版本字符串是由 `Version Number`  加上一些其它信息（如：early-access release identifier 或 build number）组成：
+
+- `$VNUM(-$PRE)?\+$BUILD(-$OPT)?`
+- `$VNUM-$PRE(-$OPT)?`
+- `$VNUM(+-$OPT)?`
+
+其中：
+
+- `PRE ` - 预发布标识
+- `BUILD` - build number
+- `OPT` - 其它可选信息，如：时间戳
+
+下面是现有和即将推出的对 JDK 9 进行版本控制的方案对比：
+
+| Release Type | long (Existing) | short (Existing) | long (New) | short (New) |
+| ------------ | --------------- | ---------------- | ---------- | ----------- |
+| Early Access | 1.9.0-ea-b19    | 9-ea             | 9-ea+19    | 9-ea        |
+| Major        | 1.9.0-b100      | 9                | 9+100      | 9           |
+| Security #1  | 1.9.0_5-b20     | 9u5              | 9.0.1+20   | 9.0.1       |
+| Security #2  | 1.9.0_11-b12    | 9u11             | 9.0.2+12   | 9.0.2       |
+| Minor #1     | 1.9.0_20-b62    | 9u20             | 9.1.2+62   | 9.1.2       |
+| Security #3  | 1.9.0_25-b15    | 9u25             | 9.1.3+15   | 9.1.3       |
+| Security #4  | 1.9.0_31-b08    | 9u31             | 9.1.4+8    | 9.1.4       |
+| Minor #2     | 1.9.0_40-b45    | 9u40             | 9.2.4+45   | 9.2.4       |
 
 
 
 ## Remove the JVM TI hprof Agent
 
+在 Java 9 之前，prof JVM native agent 被用来转储堆、追踪 CPU，之所以移除它是因为有了更好的替代方案 -- [jmap](https://docs.oracle.com/javase/7/docs/technotes/tools/share/jmap.html) 和 [Java VisualVM](https://visualvm.github.io/)。
+
 
 
 ## Remove the jhat Tool
 
+`jhat` 工具是用来在浏览器中查看堆的 dump 信息，之所以被移除也是因为有了更好的替代方案。
+
 
 
 ## Compile for Older Platform Versions
+
+在 Java 9 之前是使用 `-source` 选项设置语言规范，用 `-target` 选项生成特定版本的字节码，尽管如此，由于编译器会把已编译的类链接到当前 JDK 版本的平台 API，这会导致运行时的问题（除非重载 bootclasspath）。在 Java 9 中，为能能够编译成旧的版本，这些选项由 `--release` 替代。
+
+`--release` 等价于 `-source N -target N -bootclasspath <bootclasspath-from-N>`
+
+JDK 9 通过维护旧版本的 API 签名数据来实现这一特性，这些签名数据位于：`$JDK_HOME/lib/ct.sym`
+
+
+
+## Applet API deprecated
+
+由于 web 浏览器对 Java 插件的支持越来越少，Applet API 在 Java 9 中被废弃，但不确定将来是否会被删除。
 
 
 
 ## Java 语言的一些小变化
 
 - 允许在私有实例方法上使用 `@SafeVargs`。 `@SafeVarargs` 注释只能应用于不能重写的方法，包括静态方法和最终实例方法。 私有实例方法是 `@SafeVargs` 可以容纳的另一个用例。
--  Java SE 7 中的 `try-with-resources` 语句要求对语句管理的每个资源声明一个新的变量，而在 Java SE 9 中 允许有效的 final 变量作为资源在 `try-with-resources` 语句中使用。
+- Java SE 7 中的 `try-with-resources` 语句要求对语句管理的每个资源声明一个新的变量，而在 Java SE 9 中 允许有效的 final 变量作为资源在 `try-with-resources` 语句中使用。
 - 如果参数类型的推导类型是可表示的，则允许带有匿名类的 `<>` 操作符。 由于推导类型使用了具有 `<>` 操作符的匿名类构造函数可能不属于由签名属性支持的一组类型，所以  Java SE 7 中禁止使用带匿名类的 `<>` 操作符。
-- 完成了从 Java SE 8 开始的从法律标识符名称集合中删除下划线。
-- 支持私有接口方法，从而使接口的非抽象方法能够在它们之间共享代码。
+- 禁止 `_` 作为标识符
+- 接口支持 `private` 方法，从而使接口的非抽象方法能够在它们之间共享代码。
 
 
 
