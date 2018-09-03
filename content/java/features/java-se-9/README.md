@@ -13,9 +13,51 @@ module io.instlab.modules.car {
 }
 ```
 
+想要深入了解 Java 9 的模块化，参见：[Project Jigsaw: Module System Quick-Start Guide](http://openjdk.java.net/projects/jigsaw/quick-start)
 
 
-[Project Jigsaw: Module System Quick-Start Guide](http://openjdk.java.net/projects/jigsaw/quick-start)
+
+## New HTTP Client
+
+在 Java 9 中引入了期待已久的 `HttpURLConnection` 的替代方案，新的 API 位于 `java.net.http` 包中，支持 HTTP/2  协议和 Web Socket 握手，其性能与 Apache Http Client、Netty 以及 Jetty 相当。
+
+通过新的 HTTP Client API，可以快速创建 GET 请求：
+
+```java
+HttpRequest request = HttpRequest.newBuilder()
+  .uri(new URI("https://postman-echo.com/get"))
+  .GET()
+  .build();
+ 
+HttpResponse<String> response = HttpClient.newHttpClient()
+  .send(request, HttpResponse.BodyHandler.asString());
+```
+
+
+
+## Process API
+
+Java 9 中对访问和管理系统进程进行了增强，通过  *java.lang.ProcessHandle* 可以访问更多进程相关的信息：
+
+```java
+ProcessHandle self = ProcessHandle.current();
+long PID = self.getPid();
+ProcessHandle.Info procInfo = self.info();
+  
+Optional<String[]> args = procInfo.arguments();
+Optional<String> cmd =  procInfo.commandLine();
+Optional<Instant> startTime = procInfo.startInstant();
+Optional<Duration> cpuUsage = procInfo.totalCpuDuration();
+```
+
+通过 *destroy()* 停止运行的子线程：
+
+```java
+childProc = ProcessHandle.current().children();
+childProc.forEach(procHandle -> {
+    assertTrue("Could not kill process " + procHandle.getPid(), procHandle.destroy());
+});
+```
 
 
 

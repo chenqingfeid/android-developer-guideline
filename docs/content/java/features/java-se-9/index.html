@@ -2609,7 +2609,35 @@
     exports io.instlab.modules.car.handling;
 }
 </code></pre>
-<p><a href="http://openjdk.java.net/projects/jigsaw/quick-start" target="_blank">Project Jigsaw: Module System Quick-Start Guide</a></p>
+<p>&#x60F3;&#x8981;&#x6DF1;&#x5165;&#x4E86;&#x89E3; Java 9 &#x7684;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x53C2;&#x89C1;&#xFF1A;<a href="http://openjdk.java.net/projects/jigsaw/quick-start" target="_blank">Project Jigsaw: Module System Quick-Start Guide</a></p>
+<h2 id="new-http-client">New HTTP Client</h2>
+<p>&#x5728; Java 9 &#x4E2D;&#x5F15;&#x5165;&#x4E86;&#x671F;&#x5F85;&#x5DF2;&#x4E45;&#x7684; <code>HttpURLConnection</code> &#x7684;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#xFF0C;&#x65B0;&#x7684; API &#x4F4D;&#x4E8E; <code>java.net.http</code> &#x5305;&#x4E2D;&#xFF0C;&#x652F;&#x6301; HTTP/2  &#x534F;&#x8BAE;&#x548C; Web Socket &#x63E1;&#x624B;&#xFF0C;&#x5176;&#x6027;&#x80FD;&#x4E0E; Apache Http Client&#x3001;Netty &#x4EE5;&#x53CA; Jetty &#x76F8;&#x5F53;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x65B0;&#x7684; HTTP Client API&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x521B;&#x5EFA; GET &#x8BF7;&#x6C42;&#xFF1A;</p>
+<pre><code class="lang-java">HttpRequest request = HttpRequest.newBuilder()
+  .uri(<span class="hljs-keyword">new</span> URI(<span class="hljs-string">&quot;https://postman-echo.com/get&quot;</span>))
+  .GET()
+  .build();
+
+HttpResponse&lt;String&gt; response = HttpClient.newHttpClient()
+  .send(request, HttpResponse.BodyHandler.asString());
+</code></pre>
+<h2 id="process-api">Process API</h2>
+<p>Java 9 &#x4E2D;&#x5BF9;&#x8BBF;&#x95EE;&#x548C;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x8FDB;&#x7A0B;&#x8FDB;&#x884C;&#x4E86;&#x589E;&#x5F3A;&#xFF0C;&#x901A;&#x8FC7;  <em>java.lang.ProcessHandle</em> &#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x66F4;&#x591A;&#x8FDB;&#x7A0B;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-java">ProcessHandle self = ProcessHandle.current();
+<span class="hljs-keyword">long</span> PID = self.getPid();
+ProcessHandle.Info procInfo = self.info();
+
+Optional&lt;String[]&gt; args = procInfo.arguments();
+Optional&lt;String&gt; cmd =  procInfo.commandLine();
+Optional&lt;Instant&gt; startTime = procInfo.startInstant();
+Optional&lt;Duration&gt; cpuUsage = procInfo.totalCpuDuration();
+</code></pre>
+<p>&#x901A;&#x8FC7; <em>destroy()</em> &#x505C;&#x6B62;&#x8FD0;&#x884C;&#x7684;&#x5B50;&#x7EBF;&#x7A0B;&#xFF1A;</p>
+<pre><code class="lang-java">childProc = ProcessHandle.current().children();
+childProc.forEach(procHandle -&gt; {
+    assertTrue(<span class="hljs-string">&quot;Could not kill process &quot;</span> + procHandle.getPid(), procHandle.destroy());
+});
+</code></pre>
 <h2 id="the-java-shell">The Java Shell</h2>
 <p>Java 9 &#x5F15;&#x5165; &#x4E86; <code>jshell</code> &#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;&#x5141;&#x8BB8;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x4EE3;&#x7801;&#x7247;&#x6BB5;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x5C06;&#x4EE3;&#x7801;&#x653E;&#x5728;&#x7C7B;&#x91CC;&#x9762;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x5176;&#x5B83;&#x57FA;&#x4E8E; JVM &#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x5982; Groovy&#xFF0C;Scala&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x63A8;&#x51FA; <code>jshell</code>&#xFF0C;&#x5176;&#x4E3B;&#x8981;&#x539F;&#x56E0;&#x5728; Java &#x8BED;&#x8A00;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x5B83;&#x8BED;&#x8A00;&#x6765;&#x8BF4;&#xFF0C;&#x4E0A;&#x624B;&#x7684;&#x95E8;&#x69DB;&#x7565;&#x9AD8;&#xFF0C;&#x50CF; <code>python</code> &#x76F4;&#x63A5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x5C31;&#x80FD;&#x5B8C;&#x6210; <em>hello world</em>&#xFF0C;&#x800C; Java &#x8FD8;&#x9700;&#x8981;&#x6253;&#x5F00;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x518D;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x7F16;&#x8BD1;&#x5B8C;&#x624D;&#x80FD;&#x8FD0;&#x884C;&#xFF0C;&#x5B9E;&#x5728;&#x662F;&#x592A;&#x70E6;&#x7410;&#x4E86;&#xFF0C;&#x5B8C;&#x5168;&#x4E0D;&#x5229;&#x4E8E; Java &#x5411;&#x6559;&#x5B66;&#x8BED;&#x8A00;&#x7684;&#x8F6C;&#x5316;&#x3002;</p>
 <p>&#x9664;&#x4E86;&#x547D;&#x4EE4;&#x884C;&#x4E4B;&#x5916;&#xFF0C;<code>jshell</code> &#x8FD8;&#x63D0;&#x4F9B;&#x4E86; API&#xFF0C;&#x5141;&#x8BB8;&#x5176;&#x5B83;&#x5DE5;&#x5177;&#x96C6;&#x6210; <code>jshell</code> &#x7684;&#x529F;&#x80FD;&#x3002;</p>
@@ -2817,7 +2845,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java SE 9","level":"1.2","depth":1,"next":{"title":"Java SE 8","level":"1.3","depth":1,"path":"content/java/features/java-se-8/README.md","ref":"content/java/features/java-se-8/README.md","articles":[]},"previous":{"title":"Java SE 10","level":"1.1","depth":1,"path":"content/java/features/java-se-10/README.md","ref":"content/java/features/java-se-10/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","splitter","codeblock-filename","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"codeblock-filename":{},"theme-comscore":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android Developer Guideline","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.1.0","description":"Android 开发者指南"},"file":{"path":"content/java/features/java-se-9/README.md","mtime":"2018-09-03T06:44:50.250Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T07:12:28.488Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java SE 9","level":"1.2","depth":1,"next":{"title":"Java SE 8","level":"1.3","depth":1,"path":"content/java/features/java-se-8/README.md","ref":"content/java/features/java-se-8/README.md","articles":[]},"previous":{"title":"Java SE 10","level":"1.1","depth":1,"path":"content/java/features/java-se-10/README.md","ref":"content/java/features/java-se-10/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mathjax","splitter","codeblock-filename","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"sepia","family":"serif","size":1},"highlight":{},"codeblock-filename":{},"theme-comscore":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android Developer Guideline","links":{"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":">=3.1.0","description":"Android 开发者指南"},"file":{"path":"content/java/features/java-se-9/README.md","mtime":"2018-09-03T07:31:31.430Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-03T07:32:09.857Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
