@@ -6,7 +6,7 @@
 
 Lambda 表达式算是 Java 8 最大的亮点了，它提供了一种使用表达式来清晰而简明的表示仅有单个方法的接口，同时，Lambda 表达式也提供了相应的集合库来简化对集合的遍历、过滤、提取数据操作，而且，新的并发特性极大的提高了在多线程环境中的性能。
 
-下面是一个 `Runnable` 的 Lambda 表达式例子：
+下面是一个 [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) 的 Lambda 表达式例子：
 
 ```java:RunnableLambda.java
 public class RunnableLambda {
@@ -62,7 +62,7 @@ public class MethodReferenceTest2 {
 
 ## Default Methods
 
-在 Java 8 中引入默认方法的目的是为了让已经存在的接口可以添加新的方法而不需要让已经实现该接口的类做任何修改，甚至不用重新编译就可以使用该接口的最新版本，同时也弥补了 Java 在函数式编程方面的不足，像在 JavaScript 中的 `for-each` 循环，Java 8 通过为 `Iterable` 增加了 `forEach` 默认方法实现了。
+在 Java 8 中引入默认方法的目的是为了让已经存在的接口可以添加新的方法而不需要让已经实现该接口的类做任何修改，甚至不用重新编译就可以使用该接口的最新版本，同时也弥补了 Java 在函数式编程方面的不足，像在 JavaScript 中的 *for-each* 循环，Java 8 通过为 [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html) 增加了 [forEach](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html#forEach-java.util.function.Consumer-) 默认方法实现了。
 
 ```java:ForEachTest.java
 public class ForEachTest {
@@ -76,7 +76,7 @@ public class ForEachTest {
 
 Stream API 作为 Java 8 的一大亮点，旨在为数据流处理提供更高
 
-效的方式，而不像 J2EE 那样对数据的聚合操作和批量操作完全依赖于关系型数据库。它提供了串行和并行两种模式，并行模式基于 Java 7 提供的 fork/join 框架，充分利用多核处理器的优势，使得用 Java 8 能轻松的编写高性能的并发程序。
+效的方式，而不像 J2EE 那样对数据的聚合操作和批量操作完全依赖于关系型数据库。它提供了串行和并行两种模式，并行模式基于 Java 7 提供的  *[Fork/Join 框架](../java-se-7#forkjoin-framework)*，充分利用多核处理器的优势，使得用 Java 8 能轻松的编写高性能的并发程序。
 
 ### filter
 
@@ -272,13 +272,13 @@ processStringList(Collections.emptyList());
 
 ## Method Parameter Reflection
 
-在 Java 8 中，任何方法以及构造函数的形参名称可以通过 [`java.lang.reflect.Executable.getParameters`](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Executable.html#getParameters--) 来获取，然而，默认情况下，.class 文件并不存储形参名称，因为很多工具并不希望包含形参名称的 .class 文件占用更多的静态和动态的空间。特别是，这些工具处理的 .class 文件会变得更大，Java 虚拟机得使用更多的内存加载 .class 文件。
+在 Java 8 中，任何方法以及构造函数的形参名称可以通过 *[java.lang.reflect.Executable.getParameters](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Executable.html#getParameters--)* 来获取，然而，默认情况下，.class 文件并不存储形参名称，因为很多工具并不希望包含形参名称的 .class 文件占用更多的静态和动态的空间。特别是，这些工具处理的 .class 文件会变得更大，Java 虚拟机得使用更多的内存加载 .class 文件。
 
-如果要在 .class 文件中保留形参名称，并允许  Reflection API 能够获取到形参名称，需要在编译源代码的时候为 javac 编译器指定 `-parameter` 选项。
+如果要在 .class 文件中保留形参名称，并允许  Reflection API 能够获取到形参名称，需要在编译源代码的时候为 javac 编译器指定 *-parameter* 选项。
 
 ## Nashorn JavaScript Engine
 
-在 Java 7 之前，JDK 附带了一个基于 Mozilla Rhino 的 JavaScript 脚本引擎，在 Java 8 中则附带了一个以 Oracle Nashorn 命名的新引擎，该引擎基于 JSR 292 和 `invokedynamic` 的实现方式更符合 ECMA Script 规范，而且运行时性能更好。
+在 Java 7 之前，JDK 附带了一个基于 Mozilla Rhino 的 JavaScript 脚本引擎，在 Java 8 中则附带了一个以 Oracle Nashorn 命名的新引擎，该引擎基于 JSR 292 和 *invokedynamic* 的实现方式更符合 ECMA Script 规范，而且运行时性能更好。深入了解 Nashorn，请参见：[Oracle Nashorn: A Next-Generation JavaScript Engine for the JVM](https://www.oracle.com/technetwork/articles/java/jf14-nashorn-2126515.html)
 
 ## Concurrent Accumulators
 
@@ -286,19 +286,19 @@ processStringList(Collections.emptyList());
 
 ## Parallel operations
 
-在 Java 8 中提供了很多并行操作的 API，如 `Collection.parallelStream()`，`Arrays.parallelSort()` 等，这些 API 都是基于 Java 7 引入的 `Fork/Join` 框架。
+在 Java 8 中提供了很多并行操作的 API，如 *Collection.parallelStream()*，*Arrays.parallelSort()* 等，这些 API 都是基于 Java 7 引入的 *[Fork/Join 框架](../java-se-7#forkjoin-framework)*。
 
 ## Date and Time API
 
-在 Java 8 中引入的 `java.time` 包提供了一套日期和时间的综合模型，并在 [JSR 310: Date and Time API](http://jcp.org/en/jsr/detail?id=310) 下开发，虽然是基于国际标准化组织（ISO）的日历系统，但也支持常用的全球日历。
+在 Java 8 中引入的 *java.time* 包提供了一套日期和时间的综合模型，并在 [JSR 310: Date and Time API](http://jcp.org/en/jsr/detail?id=310) 下开发，虽然是基于国际标准化组织（ISO）的日历系统，但也支持常用的全球日历。
 
 ## PermGen and Metaspace
 
-为了解决 `java.lang.OutOfMemoryError: PermGen space ...` 的问题， Java 8 彻底移除了永生代，并将类的原数据移到 Metaspace 中，用于表示 class 原数据的类也被移除。
+为了解决 *java.lang.OutOfMemoryError: PermGen space ...* 的问题， Java 8 彻底移除了永生代，并将类的原数据移到 Metaspace 中，用于表示 class 原数据的类也被移除。
 
-原有的 `PermSize` 和 `MaxPermSize` 选项也从 JDK 8 中移除，取而代之的是 `MaxMetaspaceSize` 选项，可以通过 `MaxMetaspaceSize` 设置用于类元数据的 Native 内存量，默认情况下，Metaspace 的大小根据运行时的需要动态调整。
+原有的 *PermSize* 和 *MaxPermSize* 选项也从 JDK 8 中移除，取而代之的是 *MaxMetaspaceSize* 选项，可以通过 *MaxMetaspaceSize* 设置用于类元数据的 Native 内存量，默认情况下，Metaspace 的大小根据运行时的需要动态调整。
 
-一旦类元数据的使用量达到 `MaxMetaspaceSize` 时，将会触发 dead class 和 class loader 的垃圾回收。显然，为了限制这种垃圾回收的频率和延迟，这种垃圾回收需要进行适当的监测和调整，过多的 Metaspace 垃圾回收可能是由于类或者类加载器内存泄漏导致。
+一旦类元数据的使用量达到 *MaxMetaspaceSize* 时，将会触发 dead class 和 class loader 的垃圾回收。显然，为了限制这种垃圾回收的频率和延迟，这种垃圾回收需要进行适当的监测和调整，过多的 Metaspace 垃圾回收可能是由于类或者类加载器内存泄漏导致。
 
 ## Security Enhancement
 
