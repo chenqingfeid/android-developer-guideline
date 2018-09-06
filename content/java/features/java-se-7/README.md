@@ -2,7 +2,7 @@
 
 ## String in switch Statement
 
-在其它语言中早已支持的特性，在 Java 7 才引入，未免来得太迟了，无论怎么样，在 *switch-case* 中使用 *String* 让代码简洁了许多。这一特性其实是通过 *String* 的 *hashCode()* 实现 *switch-case*，如下面这段代码：
+在其它语言中早已支持的特性，在 Java 7 姗姗来迟，无论怎么样，在 *switch-case* 中使用 *String* 让代码简洁了许多。这一特性其实是通过 *String* 的 *hashCode()* 实现 *switch-case*，如下面这段代码：
 
 ```java
 public static int getDayOfWeek(String dayOfWeek) {
@@ -186,7 +186,7 @@ public void rethrowException(String exceptionName) throws Exception {
 ```java
 public void rethrowException(String exceptionName) throws FirstException, SecondException {
     try {
-      // ...
+      	// ...
     } catch (Exception e) {
         throw e;
     }
@@ -199,7 +199,7 @@ public void rethrowException(String exceptionName) throws FirstException, Second
 
 ```ruby
 def addtwo(a, b)
-       a + b;
+    a + b;
 end
 ```
 
@@ -258,9 +258,24 @@ static String readFirstLineFromFile(String path) throws IOException {
 
 当然，它唯一的缺点是 *try* 不支持表达式或变量。
 
-## Java nio Package
+## New I/O
 
+Java 7 引入的 New I/O API 亦称 NIO.2 或 AIO（Asynchronous I/O），*NIO.2* 的更新主要包括：
 
+- File System API
+  - *java.nio.file.\**
+  - *java.nio.file.attribute.\**
+- Channels API
+  - Socket Channel API
+    - Multicast
+  - Asynchronous I/O
+    - Future style API
+    - Callback style API
+- Miscellaneous
+  - Infinibind (IB) Sockets Direct Protocol (SDP)
+  - Stream Control Transport Protocol (SCTP)
+
+想要深入了解，请参见：[Java Tutorials: Java NIO.2](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
 
 ## Binary Literals
 
@@ -318,16 +333,6 @@ int x8 = 0x52_;            // Invalid; cannot put underscores at the end of a nu
 int x9 = 0_52;             // OK (octal literal)
 int x10 = 05_2;            // OK (octal literal)
 int x11 = 052_;            // Invalid; cannot put underscores at the end of a number
-```
-
-## Automatic null Handling
-
-这个特性简直是 NPE[^2] 的终结者，对于判断是否为 `null` 可以用 `?.` 语法实现了，如：
-
-```java
-public String getPostcode(Person person) {
-	return person?.getAddress()?.getPostcode();  
-}
 ```
 
 ## Improved Compiler Warnings and Errors
@@ -419,5 +424,3 @@ public class Example {
 ----
 
 [^1]: 编译器为动态类型语言指定的方法，当链接到调用站点的时候会被 JVM 调用一次
-[^2]: Null Pointer Exception 的缩写
-
