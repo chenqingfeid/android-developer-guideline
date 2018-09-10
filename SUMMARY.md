@@ -50,7 +50,7 @@
     * [Android 6.0 - Marshmallow](content/android/features/6.0/README.md)
     * [Android 5.0 - Lollipop](content/android/features/5.0/README.md)
     * [Android 4.4 - KitKat](content/android/features/4.4/README.md)
-* 系统
+* [系统](content/android/system/README.md)
     * [Linux Kernel](content/android/system/kernel/README.md)
         * [IPC](content/android/system/kernel/ipc.md)
     * [Hardware Abstraction Layer](content/android/system/hal/README.md)
@@ -67,6 +67,7 @@
         * [Graphics](content/android/system/framework/graphics.md)
         * [Content Providers](content/android/system/framework/content-providers.md)
         * [Activity Manager](content/android/system/framework/activity-manager.md)
+        * [Input Manager](content/android/system/framework/input-manager.md)
         * [Window Manager](content/android/system/framework/window-manager.md)
         * [Notification Manager](content/android/system/framework/notification-manager.md)
         * [Package Manager](content/android/system/framework/package-manager.md)
